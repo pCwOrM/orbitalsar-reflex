@@ -9,6 +9,15 @@ const ANOMALY_CODES = {
   GLACIER_SURGE: 5,
 };
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 const ANOMALY_COLORS = {
   NOMINAL: "#10b981",
   FLOOD_INUNDATION: "#38bdf8",
@@ -161,13 +170,13 @@ function plotSiteSwaths() {
     fillColor: ANOMALY_COLORS[activeSite.reflex_alert.anomaly_label] || "#38bdf8",
     fillOpacity: 0.95,
   })
-    .bindPopup(`<b>${activeSite.name}</b><br/>Alert: ${activeSite.reflex_alert.anomaly_label}`)
+    .bindPopup(`<b>${escapeHtml(activeSite.name)}</b><br/>Alert: ${escapeHtml(activeSite.reflex_alert.anomaly_label)}`)
     .addTo(swathLayerGroup);
 
   activeSite.nasa_nisar_gcov.slice(0, 2).forEach((g) => {
     if (g.polygon_latlon?.length >= 3) {
       L.polygon(g.polygon_latlon, { color: "#38bdf8", weight: 2, fillOpacity: 0.08 })
-        .bindPopup(`<b>NISAR GCOV</b><br/>${g.granule_id}<br/>${g.time_start}`)
+        .bindPopup(`<b>NISAR GCOV</b><br/>${escapeHtml(g.granule_id)}<br/>${escapeHtml(g.time_start)}`)
         .addTo(swathLayerGroup);
     }
   });
@@ -175,7 +184,7 @@ function plotSiteSwaths() {
   activeSite.nasa_nisar_gunw.slice(0, 2).forEach((g) => {
     if (g.polygon_latlon?.length >= 3) {
       L.polygon(g.polygon_latlon, { color: "#f59e0b", weight: 2, dashArray: "5,4", fillOpacity: 0.06 })
-        .bindPopup(`<b>NISAR GUNW Interferogram</b><br/>${g.granule_id}<br/>${g.time_start} → ${g.time_end}`)
+        .bindPopup(`<b>NISAR GUNW Interferogram</b><br/>${escapeHtml(g.granule_id)}<br/>${escapeHtml(g.time_start)} → ${escapeHtml(g.time_end)}`)
         .addTo(swathLayerGroup);
     }
   });
@@ -192,7 +201,7 @@ function plotSiteSwaths() {
         ],
         { color: "#a78bfa", weight: 1.5, dashArray: "2,4", fillOpacity: 0.05 }
       )
-        .bindPopup(`<b>Sentinel-1 RTC (Planetary Computer)</b><br/>${s.id}<br/>${s.datetime}`)
+        .bindPopup(`<b>Sentinel-1 RTC (Planetary Computer)</b><br/>${escapeHtml(s.id)}<br/>${escapeHtml(s.datetime)}`)
         .addTo(swathLayerGroup);
     }
   });
@@ -439,7 +448,7 @@ function updateSimulator() {
 
   setBadgeStyle(document.getElementById("simBadge"), label);
   document.getElementById("simSummary").textContent =
-    `Δσ⁰ = ${db.toFixed(2)} dB · Severity = ${severity}/255 · Flood×Weather Conf = ${(conf * 100).toFixed(0)}%`;
+    `Δσ⁰ = ${db.toFixed(2)} dB · Severity = ${severity}/255 · Flood×Weather Conf = ${(conf * 100).toFixed(1)}%`;
 
   const ts = activeSite.observation_inputs.timestamp_s || Math.floor(Date.now() / 1000);
   const [lat, lon] = activeSite.center;
@@ -464,9 +473,11 @@ function downloadPacketBin() {
   if (!currentPacketBytes) return;
   const blob = new Blob([currentPacketBytes], { type: "application/octet-stream" });
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
+  const blobUrl = URL.createObjectURL(blob);
+  a.href = blobUrl;
   a.download = `orbitalsar_${activeSite.id}_24b.bin`;
   a.click();
+  setTimeout(() => URL.revokeObjectURL(blobUrl), 1500);
 }
 
 function renderGranuleTable() {
@@ -514,14 +525,17 @@ function renderGranuleTable() {
       <tbody>
         ${rows
           .map(
-            (r) => `
+            (r) => {
+              const safeUrl = /^https?:\/\//i.test(r.url || "") ? escapeHtml(r.url) : "";
+              return `
           <tr>
-            <td><strong>${r.source}</strong></td>
-            <td><code>${r.id}</code></td>
-            <td>${r.time || ""}</td>
-            <td>${r.meta || ""}</td>
-            <td>${r.url ? `<a href="${r.url}" target="_blank" rel="noopener">Inspect ↗</a>` : "--"}</td>
-          </tr>`
+            <td><strong>${escapeHtml(r.source)}</strong></td>
+            <td><code>${escapeHtml(r.id)}</code></td>
+            <td>${escapeHtml(r.time)}</td>
+            <td>${escapeHtml(r.meta)}</td>
+            <td>${safeUrl ? `<a href="${safeUrl}" target="_blank" rel="noopener">Inspect ↗</a>` : "--"}</td>
+          </tr>`;
+            }
           )
           .join("")}
       </tbody>

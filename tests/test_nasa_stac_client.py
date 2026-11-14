@@ -1,11 +1,13 @@
 """Unit tests for NASA CMR / ASF / Planetary Computer STAC parsers and curated data integrity."""
 
 import json
+import ssl
 import tempfile
 import unittest
 from pathlib import Path
 
 from src.nasa_stac_client import (
+    _default_ssl_context,
     load_dotenv_file,
     normalize_cmr_nisar_entry,
     parse_cmr_polygon,
@@ -46,6 +48,10 @@ class TestNasaStacClient(unittest.TestCase):
             parsed = load_dotenv_file(p)
             self.assertEqual(parsed, {"KEY_ONE": "alpha", "KEY_TWO": "beta"})
 
+    def test_tls_verification_enabled(self) -> None:
+        ctx = _default_ssl_context()
+        self.assertEqual(ctx.verify_mode, ssl.CERT_REQUIRED)
+
     def test_compiled_study_sites_if_present(self) -> None:
         data_file = Path(__file__).resolve().parent.parent / "data" / "study_sites.json"
         if not data_file.is_file():
@@ -58,6 +64,10 @@ class TestNasaStacClient(unittest.TestCase):
             raw = bytes.fromhex(hex_pkt)
             decoded = decode_fns_packet_24b(raw)
             self.assertEqual(decoded["anomaly_label"], site["reflex_alert"]["anomaly_label"])
+            self.assertGreaterEqual(len(site["nasa_nisar_gcov"]), 1)
+            self.assertGreaterEqual(len(site["nasa_nisar_gunw"]), 1)
+            self.assertGreaterEqual(len(site["planetary_computer_s1_rtc"]), 1)
+            self.assertGreaterEqual(len(site["meteomatics_weather"]), 1)
 
 
 if __name__ == "__main__":

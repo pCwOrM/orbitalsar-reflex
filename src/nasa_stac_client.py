@@ -75,7 +75,7 @@ def normalize_cmr_nisar_entry(entry: dict[str, Any], product: str) -> dict[str, 
 
 
 def _default_ssl_context() -> ssl.SSLContext:
-    return ssl._create_unverified_context()
+    return ssl.create_default_context()
 
 
 def fetch_nasa_nisar_granules(
