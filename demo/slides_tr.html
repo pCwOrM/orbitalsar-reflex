@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitalSAR Reflex — 7 Slaytlık NASA Space Apps 2026 Sunumu (Türkçe)</title>
+  <style>
+    @page { size: 1280px 720px; margin: 0; }
+    :root {
+      --bg: #050914;
+      --panel: #0b1222;
+      --border: #1e293b;
+      --accent: #38bdf8;
+      --amber: #f59e0b;
+      --emerald: #10b981;
+      --rose: #f43f5e;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #020617;
+      color: var(--text);
+      font-family: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    }
+    .controls {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(11, 18, 34, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      z-index: 999;
+    }
+    .controls button, .controls a {
+      background: #111b31;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .controls button:hover, .controls a:hover { border-color: var(--accent); }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      margin: 24px auto;
+      padding: 46px 56px;
+      background: radial-gradient(circle at 85% 15%, #112244 0%, var(--bg) 60%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.active { display: flex; }
+    .slide-kicker {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h1 { margin: 8px 0 12px; font-size: 3.0rem; line-height: 1.1; }
+    h2 { margin: 8px 0 14px; font-size: 2.05rem; line-height: 1.2; }
+    p.lead { font-size: 1.15rem; color: var(--muted); max-width: 920px; line-height: 1.55; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .box {
+      background: rgba(11, 18, 34, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+    }
+    .box h3 { margin: 0 0 8px; color: var(--accent); font-size: 1.12rem; }
+    .box p, .box li { color: var(--muted); font-size: 0.98rem; line-height: 1.5; }
+    .stat-big { font-size: 2.2rem; font-weight: 800; color: var(--text); margin: 4px 0; }
+    .patch-hero { width: 250px; height: 250px; border-radius: 22px; object-fit: cover; border: 2px solid var(--accent); }
+    .code-bar {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: #020617;
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 10px;
+      color: var(--accent);
+      font-size: 1.0rem;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    @media print {
+      body { background: var(--bg); }
+      .controls { display: none; }
+      .slide { display: flex !important; margin: 0; border: none; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button type="button" onclick="prevSlide()">← Önceki</button>
+    <span id="counter">Slayt 1 / 7</span>
+    <button type="button" onclick="nextSlide()">Sonraki →</button>
+    <a href="slides.html">English Deck</a>
+    <a href="../index.html">Canlı Gözlemevi</a>
+  </div>
+
+  <!-- SLAYT 1 -->
+  <section class="slide active">
+    <div class="slide-kicker">Slayt 1 / 7 · NASA Space Apps Challenge 2026 · Dancing with the SARs</div>
+    <div class="grid-2" style="align-items:center;">
+      <div>
+        <h1>OrbitalSAR Reflex</h1>
+        <p class="lead">
+          NASA NISAR L-bant ve çoklu-SAR Dünya ritimlerini; Meteomatics meteoroloji verisi ve
+          24 byte deterministik kenar telemetrisi ile birleştiren açık kaynak yüzey değişim gözlemevi.
+        </p>
+        <div class="box" style="margin-top:20px;">
+          <h3>OrbitalSAR Reflex Takımı (Universal Event)</h3>
+          <p><strong>Volkan Dağlı</strong> (Team Owner · <code>@pCwOrM</code>) · <strong>Murat Emre ÖZKAYA</strong> · <strong>Prenses Metin</strong> (<code>@PrensesMTN</code>)</p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;">
+        <img src="../assets/orbitalsar_reflex_mission_patch.jpg" alt="OrbitalSAR Reflex Görev Arması" class="patch-hero" />
+      </div>
+    </div>
+    <div class="foot"><span>Canlı Uygulama: https://pcworm.github.io/orbitalsar-reflex/</span><span>Depo: github.com/pCwOrM/orbitalsar-reflex</span></div>
+  </section>
+
+  <!-- SLAYT 2 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 2 / 7 · Problem ve İletişim Darboğazı</div>
+    <div>
+      <h2>Bulutların Ötesini Görmek — Gigabaytlar Altında Boğulmadan</h2>
+      <p class="lead">Dünya yüzeyi sel, deprem, orman yangını ve buzul hareketleriyle sürekli devinir. Radar gece ve bulut arkasını görür; ancak halk ve karar vericiler için iki büyük engel vardır:</p>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>1. Yorumlama Engeli</h3>
+        <p>Ham SAR kovaryans (<code>GCOV</code>) ve interferogram (<code>GUNW</code>) ürünleri hava durumu sürücüleriyle birlikte sunulmadıkça anlaşılması güçtür.</p>
+      </div>
+      <div class="box">
+        <h3>2. İndirme (Downlink) Darboğazı</h3>
+        <div class="stat-big">1.8 GB → 24 B</div>
+        <p>Ham SAR sahneleri çok gigabaytlıktır. Kritik sel veya kırılma uyarıları uç birimde sıkıştırılmazsa saatlerce gecikme yaşanır.</p>
+      </div>
+      <div class="box">
+        <h3>3. Yanlış Alarm Riski</h3>
+        <p>Sakin göller de taşkın suları da düşük geri saçılım verir. SAR koherans düşüşünü yüksek çözünürlüklü yağış verisiyle doğrulamak gerekir.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Dancing with the SARs</span><span>OrbitalSAR Reflex · Slayt 2</span></div>
+  </section>
+
+  <!-- SLAYT 3 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 3 / 7 · Mimari ve Fiziksel Saçılım Modeli</div>
+    <div>
+      <h2>Çift Frekanslı SAR + Meteomatics Fiziksel Füzyonu</h2>
+      <p class="lead">NASA NISAR L-bant (~24 cm) kanopi nüfuzu, Sentinel-1 C-bant (~5.6 cm) yüzey duyarlılığı ve senkron meteorolojik telemetri bir arada.</p>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Doğrulanmış Veri Kaynakları</h3>
+        <ul>
+          <li><strong>NASA CMR NISAR L2:</strong> <code>C2854338529-ASF</code> (GCOV) &amp; <code>C2854335566-ASF</code> (GUNW InSAR)</li>
+          <li><strong>NASA ASF Vertex:</strong> Sentinel-1 GRD/SLC ve Dört-Polarizasyonlu UAVSAR L-bant</li>
+          <li><strong>Microsoft Planetary Computer:</strong> Açık STAC <code>sentinel-1-rtc</code></li>
+          <li><strong>Meteomatics API:</strong> Uydu geçiş penceresine eşleşik <code>precip_24h:mm</code> &amp; <code>t_2m:C</code></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Fiziksel Saçılım İmzaları</h3>
+        <ul>
+          <li><strong>Taşkın / Sel:</strong> Δσ⁰ ≤ −3.0 dB ve Δγ ≥ 0.35 + yağış güven skoru</li>
+          <li><strong>Kanopi İçi Algılama (L-Bant):</strong> Ağaç gövdesi çift sekme ve RVI yangın izi</li>
+          <li><strong>Tektonik Deformasyon:</strong> GUNW interferometrik faz ve koherans kaybı</li>
+          <li><strong>Buzul Hızlanması:</strong> Sıfır altı sıcaklık kapısı ile bazal buz kayması ayrımı</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span>src/nasa_stac_client.py · src/sar_reflex_core.py</span><span>OrbitalSAR Reflex · Slayt 3</span></div>
+  </section>
+
+  <!-- SLAYT 4 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 4 / 7 · 0-SRAM / 24-Byte Deterministik Kenar Telemetrisi</div>
+    <div>
+      <h2>Gigabaytlık Granüllerden 24-Byte CRC-16 Korumalı Refleks Paketine</h2>
+      <p class="lead">Her yüzey anomalisi <code>&lt;IffffBBH&gt;</code> little-endian ikili çerçevesine sıkıştırılır; dar bantlı afet hatlarında &gt;7.5×10⁷× alarm veri tasarrufu sağlar.</p>
+    </div>
+    <div class="code-bar">
+      Göksu Örnek Paketi (24 B): ab 89 d5 6a | ae 47 11 42 | 85 eb 07 42 | c1 a8 c0 c0 | 0a d7 23 3f | 01 | 91 | 19 71
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>Byte 0–11 (Uzay-Zaman)</h3>
+        <p><code>uint32</code> zaman damgası ve <code>float32</code> enlem-boylam ile olay koordinatı kilitlenir.</p>
+      </div>
+      <div class="box">
+        <h3>Byte 12–21 (SAR Fiziği)</h3>
+        <p><code>float32</code> Δσ⁰ (dB), Δγ koherans düşüşü, <code>uint8</code> anomali kodu (0–5) ve şiddet (0–255).</p>
+      </div>
+      <div class="box">
+        <h3>Byte 22–23 (CRC-16)</h3>
+        <p>Python ve tarayıcı JS tarafında bit düzeyinde birebir aynı <code>zlib.crc32 &amp; 0xFFFF</code> doğrulaması.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Python ve Tarayıcı JavaScript Arasında Bit-Birebir Uyum</span><span>OrbitalSAR Reflex · Slayt 4</span></div>
+  </section>
+
+  <!-- SLAYT 5 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 5 / 7 · Yerel Vaka Çalışması: Göksu Deltası ve Mersin–Toros Havzası, Türkiye</div>
+    <div>
+      <h2>Sağanak Nabzı × NISAR L-Bant Sel Refleksi (36.32°N, 33.98°E)</h2>
+      <p class="lead">Toros dağlarından gelen akışları ekolojik açıdan kritik Göksu sulak alanlarına bağlayan yerel taşkın koridorumuz.</p>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Ekim 2026 Çoklu-Sensör Doğrulaması</h3>
+        <ul>
+          <li><strong>NASA NISAR GCOV:</strong> <code>NISAR_L2_PR_GCOV_033_100_A_020...</code> (2026-10-19)</li>
+          <li><strong>NASA NISAR GUNW:</strong> 12 günlük interferogram <code>2026-10-07 → 2026-10-19</code></li>
+          <li><strong>Planetary Computer S1:</strong> Mersin kıyı şeridi <code>sentinel-1-rtc</code> taraması</li>
+          <li><strong>Meteomatics 24s Yağış Zirvesi:</strong> Pencere içi <strong>42.59 mm/24s</strong></li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>OrbitalSAR Reflex Çıktısı</h3>
+        <div class="stat-big" style="color:var(--accent);">FLOOD_INUNDATION</div>
+        <p>Δσ⁰ = <strong>−6.02 dB</strong> · Koherans Kaybı Δγ = <strong>0.64</strong> · Şiddet = <strong>145/255</strong> · Hava×SAR Güveni = <strong>%74.5</strong>.</p>
+        <p>Sürüklenebilir karşılaştırıcı ile NISAR <code>HHHH</code> / <code>HVHV</code> polarizasyonları ve <code>GUNW</code> anlık incelenir.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Göksu Deltası ve Mersin–Toros Koridoru</span><span>OrbitalSAR Reflex · Slayt 5</span></div>
+  </section>
+
+  <!-- SLAYT 6 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 6 / 7 · 4 Kıtada Küresel Yüzey Ritimleri</div>
+    <div>
+      <h2>Canlı Doğrulanmış Dört Farklı Fiziksel Değişim Rejimi</h2>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>Hayward Fayı, CA (ABD)</h3>
+        <p><strong>SURFACE_DEFORMATION (76/255)</strong><br/>NISAR <code>GUNW</code> (2026-10-09→21) + NASA L-bant <strong>UAVSAR</strong> ile fay hareketi ve set çökmesi izleme.</p>
+      </div>
+      <div class="box">
+        <h3>Orta Amazon (Brezilya)</h3>
+        <p><strong>WILDFIRE_SCAR (93/255)</strong><br/>NISAR L-bant <code>DHDH</code>, optik uyduyu kör eden bulutları aşarak kanopi altı değişimi (ΔRVI = −0.65) yakalar.</p>
+      </div>
+      <div class="box">
+        <h3>Malaspina Buzulu (Alaska)</h3>
+        <p><strong>GLACIER_SURGE (98/255)</strong><br/>Sıfır altı Meteomatics eşiklemesi (−3.8 °C) ile Δγ = 0.78 bazal buz kayması ayrıştırılır.</p>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Canlı NASA + Planetary Computer Tarayıcı Sorgusu</h3>
+      <p>Gözlemevi, CORS üzerinden doğrudan <code>cmr.earthdata.nasa.gov</code> ve Planetary Computer STAC servislerine canlı bağlanarak en güncel sahneleri listeler.</p>
+    </div>
+    <div class="foot"><span>4 Doğrulanmış Bölge · 12 NISAR + 12 S1-RTC + Hava Zaman Serisi</span><span>OrbitalSAR Reflex · Slayt 6</span></div>
+  </section>
+
+  <!-- SLAYT 7 -->
+  <section class="slide">
+    <div class="slide-kicker">Slayt 7 / 7 · Açık Kaynak Etki, Doğrulama ve Teşekkür</div>
+    <div>
+      <h2>Açık, Tekrarlanabilir ve Test Edilmiş Mimari</h2>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Doğrulama ve Açık Erişim</h3>
+        <ul>
+          <li><strong>Canlı Web Gözlemevi:</strong> <code>https://pcworm.github.io/orbitalsar-reflex/</code></li>
+          <li><strong>MIT Açık Kaynak Kod:</strong> <code>github.com/pCwOrM/orbitalsar-reflex</code></li>
+          <li><strong>Otomatik Birim Testleri:</strong> <code>10/10 PASS</code> (CRC-16 çerçeveleme, eşikler ve JSON veri doğrulaması)</li>
+          <li><strong>İkili Çıktı İndirme:</strong> Canlı simülatörden 24-byte <code>.bin</code> telemetri indirme</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>NASA ve Global İş Ortağı Veri Kaynakları</h3>
+        <ul>
+          <li>NASA Earthdata CMR (NISAR L2 Provisional GCOV / GUNW)</li>
+          <li>NASA Alaska Satellite Facility (Sentinel-1 &amp; UAVSAR)</li>
+          <li>Microsoft Planetary Computer STAC (<code>sentinel-1-rtc</code>)</li>
+          <li>Meteomatics Weather API (Global Offer Partner)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span>SI Şeffaflığı: Görev arması ve iskelet yapıda YZ desteği kullanılmıştır; NASA logosu içermez.</span><span>OrbitalSAR Reflex · Slayt 7 / 7</span></div>
+  </section>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    let idx = 0;
+    function show(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+      document.getElementById("counter").textContent = `Slayt ${idx + 1} / ${slides.length}`;
+    }
+    function nextSlide() { show(idx + 1); }
+    function prevSlide() { show(idx - 1); }
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+  </script>
+</body>
+</html>

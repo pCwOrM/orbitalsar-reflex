@@ -4,9 +4,11 @@
 
 # OrbitalSAR Reflex
 
-**NASA Space Apps Challenge 2026 — *Dancing with the SARs***  
+**NASA Space Apps Challenge 2026 — *Dancing with the SARs* (Universal Event)**  
 Live Web Observatory: **[https://pcworm.github.io/orbitalsar-reflex/](https://pcworm.github.io/orbitalsar-reflex/)**  
-7-Slide Demo Deck: **[demo/slides.html](demo/slides.html)** · **[PDF (7 Slides)](docs/OrbitalSAR_Reflex_Demo_Slides.pdf)**
+Primary 7-Slide Demo (EN): **[demo/slides.html](demo/slides.html)** · **[PDF (EN)](docs/OrbitalSAR_Reflex_Demo_Slides.pdf)**  
+Supplementary Turkish Deck (TR): **[demo/slides_tr.html](demo/slides_tr.html)** · **[PDF (TR)](docs/OrbitalSAR_Reflex_Demo_Slides_TR.pdf)**  
+Team Onboarding & Branch Guide: **[CONTRIBUTING.md](CONTRIBUTING.md)**
 
 ---
 
@@ -46,23 +48,28 @@ Live Web Observatory: **[https://pcworm.github.io/orbitalsar-reflex/](https://pc
 
 ```text
 orbitalsar-reflex/
-├── index.html                           # Main GitHub Pages Live Web Observatory
+├── index.html                               # Main GitHub Pages Live Web Observatory (English)
+├── CONTRIBUTING.md                          # Team workflow, branch rules & onboarding guide
+├── .github/
+│   └── PULL_REQUEST_TEMPLATE.md             # PR verification checklist
 ├── assets/
-│   ├── app.js                           # Interactive Leaflet map, SAR wipe, Canvas weather chart & 24B encoder
+│   ├── app.js                               # Interactive Leaflet map, SAR wipe, Canvas weather chart & 24B encoder
 │   ├── styles.css
-│   └── orbitalsar_reflex_mission_patch.jpg
+│   └── orbitalsar_reflex_mission_patch.jpg  # Watermarked SI-GENERATED team mission patch
 ├── data/
-│   └── study_sites.json                 # Real verified NASA NISAR + ASF + Planetary Computer + Meteomatics bundle
+│   └── study_sites.json                     # Real verified NASA NISAR + ASF + Planetary Computer + Meteomatics bundle
 ├── demo/
-│   └── slides.html                      # Interactive 7-slide HTML demonstration
+│   ├── slides.html                          # Interactive 7-slide HTML demonstration (EN)
+│   └── slides_tr.html                       # Interactive 7-slide HTML demonstration (TR)
 ├── docs/
 │   ├── ARCHITECTURE.md
-│   └── OrbitalSAR_Reflex_Demo_Slides.pdf# Exact 7-page demonstration PDF
+│   ├── OrbitalSAR_Reflex_Demo_Slides.pdf    # Exact 7-page demonstration PDF (EN)
+│   └── OrbitalSAR_Reflex_Demo_Slides_TR.pdf # Exact 7-page demonstration PDF (TR)
 ├── src/
 │   ├── __init__.py
-│   ├── sar_reflex_core.py               # SAR physics classifier + 24-byte FNS packet codec
-│   ├── nasa_stac_client.py              # Zero-dependency NASA CMR / ASF / Planetary Computer / Meteomatics client
-│   └── build_verified_datasets.py       # Reproducible dataset compiler (reads Meteomatics creds from .env)
+│   ├── sar_reflex_core.py                   # SAR physics classifier + 24-byte FNS packet codec
+│   ├── nasa_stac_client.py                  # Zero-dependency NASA CMR / ASF / Planetary Computer / Meteomatics client
+│   └── build_verified_datasets.py           # Reproducible dataset compiler (reads Meteomatics creds from .env)
 └── tests/
     ├── test_sar_reflex_core.py
     └── test_nasa_stac_client.py
