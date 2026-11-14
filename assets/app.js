@@ -331,25 +331,37 @@ function refreshLanguageView() {
   selectSite(activeSite.id, { preserveSimulator: true });
 }
 
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "tr" : "en";
+  try {
+    window.localStorage.setItem("orbitalsar_lang", currentLang);
+  } catch (_) {}
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", currentLang);
+    window.history.replaceState({}, "", url.toString());
+  } catch (_) {}
+  refreshLanguageView();
+}
+
 async function init() {
+  const langBtn = document.getElementById("langToggle");
+  if (langBtn) {
+    langBtn.addEventListener("click", toggleLanguage);
+  }
   applyStaticI18n();
-  const resp = await fetch("data/study_sites.json");
-  bundle = await resp.json();
+  try {
+    const resp = await fetch("data/study_sites.json");
+    bundle = await resp.json();
+  } catch (err) {
+    console.error("Failed to load study_sites.json:", err);
+    return;
+  }
   initMap();
   renderTabs();
   selectSite(bundle.study_sites[0].id);
   wireSimulator();
   wireWipeControls();
-  document.getElementById("langToggle").addEventListener("click", () => {
-    currentLang = currentLang === "en" ? "tr" : "en";
-    try {
-      window.localStorage.setItem("orbitalsar_lang", currentLang);
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", currentLang);
-      window.history.replaceState({}, "", url.toString());
-    } catch (_) {}
-    refreshLanguageView();
-  });
   document.getElementById("liveQueryBtn").addEventListener("click", runLiveCorsQuery);
   document.getElementById("downloadBinBtn").addEventListener("click", downloadPacketBin);
 }
