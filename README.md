@@ -5,7 +5,7 @@
 # OrbitalSAR Reflex
 
 **NASA Space Apps Challenge 2026 — *Dancing with the SARs* (Universal Event)**  
-Live Web Observatory: **[https://pcworm.github.io/orbitalsar-reflex/](https://pcworm.github.io/orbitalsar-reflex/)**  
+Live Web Observatory: **[https://orbitalsar.space/](https://orbitalsar.space/)**  
 Primary 7-Slide Demo (EN): **[demo/slides.html](demo/slides.html)** · **[PDF (EN)](docs/OrbitalSAR_Reflex_Demo_Slides.pdf)**  
 Supplementary Turkish Deck (TR): **[demo/slides_tr.html](demo/slides_tr.html)** · **[PDF (TR)](docs/OrbitalSAR_Reflex_Demo_Slides_TR.pdf)**  
 Team Onboarding & Branch Guide: **[CONTRIBUTING.md](CONTRIBUTING.md)**

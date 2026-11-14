@@ -8,7 +8,7 @@ Welcome aboard! Active repository collaborators & Space Apps team:
 ## 1. Branch & Deployment Rules
 
 The `main` branch automatically builds and serves our live **NASA Space Apps 2026 Universal Event** web observatory at:
-- `https://pcworm.github.io/orbitalsar-reflex/`
+- `https://orbitalsar.space/`
 
 To keep production stable before final judging (**Sunday, Nov 15, 2026 at 23:59 UTC+3**):
 1. Do **not** push untested edits directly to `main`.
