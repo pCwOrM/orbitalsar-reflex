@@ -95,10 +95,13 @@ function initMap() {
     return;
   }
   map = L.map("sarMap", { zoomControl: true }).setView([36.32, 33.98], 7);
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
-    attribution: "&copy; OpenStreetMap &copy; CARTO",
-    maxZoom: 18,
-  }).addTo(map);
+  L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    {
+      attribution: "Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics",
+      maxZoom: 18,
+    }
+  ).addTo(map);
   swathLayerGroup = L.layerGroup().addTo(map);
 }
 
