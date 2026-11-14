@@ -5,7 +5,8 @@
 # OrbitalSAR Reflex
 
 **NASA Space Apps Challenge 2026 — *Dancing with the SARs***  
-Autonomous SAR backscatter & coherence change-detection engine with **24-byte deterministic edge telemetry** for rapid Earth-observation anomaly response.
+Live Web Observatory: **[https://pcworm.github.io/orbitalsar-reflex/](https://pcworm.github.io/orbitalsar-reflex/)**  
+7-Slide Demo Deck: **[demo/slides.html](demo/slides.html)** · **[PDF (7 Slides)](docs/OrbitalSAR_Reflex_Demo_Slides.pdf)**
 
 ---
 
@@ -22,14 +23,22 @@ Autonomous SAR backscatter & coherence change-detection engine with **24-byte de
 
 ---
 
-## Core Concept
+## Core Architecture & Physical Drivers
 
-Synthetic Aperture Radar (SAR) penetrates clouds, smoke, and darkness to capture surface change, but raw SAR scenes are bandwidth-heavy to downlink and slow to triage during disasters. **OrbitalSAR Reflex** models an onboard/edge reflex pipeline:
+**OrbitalSAR Reflex** connects **NASA-ISRO Synthetic Aperture Radar (NISAR)** L-band observations with **Sentinel-1** C-band backscatter, **Meteomatics Weather API** meteorological series, and a **24-byte CRC-16 verified deterministic telemetry encoder**:
 
-1. **Multi-Temporal SAR Change Metrics:** Computes log-ratio backscatter change ($\Delta\sigma^0$ in dB) and interferometric coherence drop ($\Delta\gamma$).
-2. **Deterministic Reflex Classification:** Classifies scenes into `NOMINAL`, `FLOOD_INUNDATION`, `SURFACE_DEFORMATION`, or `STRUCTURAL_DAMAGE`.
-3. **24-Byte FNS Telemetry Packet:** Packs timestamp, geolocation, $\Delta\sigma^0$, $\Delta\gamma$, anomaly code, severity, and CRC-16 checksum into an exact **24-byte** binary frame for ultra-low-bandwidth downlink.
-4. **Interactive Mission HUD (`web/index.html`):** Browser-based SAR anomaly & telemetry inspector.
+1. **Multi-Sensor SAR Fusion (`data/study_sites.json` & Live CORS Queries):**
+   - **NASA Earthdata CMR NISAR L2 Provisional:** `NISAR_L2_GCOV_PROVISIONAL_V1` (`C2854338529-ASF`) & `NISAR_L2_GUNW_PROVISIONAL_V1` (`C2854335566-ASF`) interferograms.
+   - **NASA ASF Search Vertex:** Sentinel-1 & Quad-Pol L-band airborne **UAVSAR**.
+   - **Microsoft Planetary Computer STAC:** `sentinel-1-rtc` public STAC search & rendered previews.
+   - **Meteomatics Weather API:** Synced `precip_24h:mm`, `t_2m:C`, `wind_speed_10m:ms`, and `relative_humidity_2m:p` series gating flood vs. cryosphere regimes.
+2. **4 Verified Study Regions:**
+   - **Göksu Delta & Mersin–Taurus Basin, Turkey** *(Hometown Context — Flood / Wetland Rhythm)*: `FLOOD_INUNDATION` ($\Delta\sigma^0 = -6.02$ dB, $\Delta\gamma = 0.64$, Meteomatics peak rain `42.59 mm/24h`)
+   - **Hayward Fault & Sacramento Delta, CA, USA**: `SURFACE_DEFORMATION` (NISAR `GUNW` + NASA `UAVSAR`)
+   - **Central Amazon Floodplain, Brazil**: `WILDFIRE_SCAR` / L-band canopy penetration ($\Delta\text{RVI} = -0.65$)
+   - **Malaspina & Yakutat Glacier Corridor, Alaska**: `GLACIER_SURGE` ($\Delta\gamma = 0.78$, sub-zero gating $-3.8^\circ\text{C}$)
+3. **24-Byte Deterministic FNS Edge Packet (`<IffffBBH`):**
+   - Compresses GB-scale surface-change decisions down to **24 bytes** with byte-identical Python (`zlib.crc32`) and browser JavaScript encoders.
 
 ---
 
@@ -37,29 +46,42 @@ Synthetic Aperture Radar (SAR) penetrates clouds, smoke, and darkness to capture
 
 ```text
 orbitalsar-reflex/
+├── index.html                           # Main GitHub Pages Live Web Observatory
 ├── assets/
+│   ├── app.js                           # Interactive Leaflet map, SAR wipe, Canvas weather chart & 24B encoder
+│   ├── styles.css
 │   └── orbitalsar_reflex_mission_patch.jpg
+├── data/
+│   └── study_sites.json                 # Real verified NASA NISAR + ASF + Planetary Computer + Meteomatics bundle
+├── demo/
+│   └── slides.html                      # Interactive 7-slide HTML demonstration
 ├── docs/
-│   └── ARCHITECTURE.md
+│   ├── ARCHITECTURE.md
+│   └── OrbitalSAR_Reflex_Demo_Slides.pdf# Exact 7-page demonstration PDF
 ├── src/
 │   ├── __init__.py
-│   └── sar_reflex_core.py
-├── tests/
-│   └── test_sar_reflex_core.py
-├── web/
-│   └── index.html
-├── LICENSE
-└── README.md
+│   ├── sar_reflex_core.py               # SAR physics classifier + 24-byte FNS packet codec
+│   ├── nasa_stac_client.py              # Zero-dependency NASA CMR / ASF / Planetary Computer / Meteomatics client
+│   └── build_verified_datasets.py       # Reproducible dataset compiler (reads Meteomatics creds from .env)
+└── tests/
+    ├── test_sar_reflex_core.py
+    └── test_nasa_stac_client.py
 ```
 
 ---
 
 ## Quickstart & Verification
 
-Run the Python unit tests (zero external dependencies, Python 3.10+):
+Run all automated tests (zero third-party Python dependencies):
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Open `web/index.html` in any modern browser to test the interactive SAR Reflex HUD prototype.
+*(Note: Never commit `.env` secrets; Meteomatics credentials are read locally via `METEOMATICS_USER` / `METEOMATICS_PASS`.)*
+
+---
+
+## Super Intelligence (SI) Transparency Disclosure
+
+In accordance with NASA Space Apps Challenge 2026 SI guidelines, mission patch artwork (`assets/orbitalsar_reflex_mission_patch.jpg`) and code scaffolding were developed with AI/SI assistance without incorporating any NASA logos, flags, or official emblems. All telemetry calculations, CRC-16 packet framing, and API-fetched datasets are verified by the automated test suite in `tests/`.

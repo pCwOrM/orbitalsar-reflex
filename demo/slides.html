@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitalSAR Reflex — 7-Slide NASA Space Apps 2026 Demonstration</title>
+  <style>
+    @page { size: 1280px 720px; margin: 0; }
+    :root {
+      --bg: #050914;
+      --panel: #0b1222;
+      --border: #1e293b;
+      --accent: #38bdf8;
+      --amber: #f59e0b;
+      --emerald: #10b981;
+      --rose: #f43f5e;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #020617;
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    }
+    .controls {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      background: rgba(11, 18, 34, 0.92);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 8px 16px;
+      z-index: 999;
+    }
+    .controls button, .controls a {
+      background: #111b31;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .controls button:hover, .controls a:hover { border-color: var(--accent); }
+    .slide {
+      width: 1280px;
+      height: 720px;
+      margin: 24px auto;
+      padding: 46px 56px;
+      background: radial-gradient(circle at 85% 15%, #112244 0%, var(--bg) 60%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.active { display: flex; }
+    .slide-kicker {
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    h1 { margin: 8px 0 12px; font-size: 3.1rem; line-height: 1.1; }
+    h2 { margin: 8px 0 14px; font-size: 2.15rem; line-height: 1.18; }
+    p.lead { font-size: 1.18rem; color: var(--muted); max-width: 900px; line-height: 1.55; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; align-items: stretch; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .box {
+      background: rgba(11, 18, 34, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+    }
+    .box h3 { margin: 0 0 8px; color: var(--accent); font-size: 1.15rem; }
+    .box p, .box li { color: var(--muted); font-size: 1.0rem; line-height: 1.5; }
+    .stat-big { font-size: 2.3rem; font-weight: 800; color: var(--text); margin: 4px 0; }
+    .patch-hero { width: 250px; height: 250px; border-radius: 22px; object-fit: cover; border: 2px solid var(--accent); }
+    .code-bar {
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: #020617;
+      border: 1px solid var(--border);
+      padding: 14px 18px;
+      border-radius: 10px;
+      color: var(--accent);
+      font-size: 1.02rem;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+    }
+    @media print {
+      body { background: var(--bg); }
+      .controls { display: none; }
+      .slide { display: flex !important; margin: 0; border: none; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="controls">
+    <button type="button" onclick="prevSlide()">← Prev</button>
+    <span id="counter">Slide 1 / 7</span>
+    <button type="button" onclick="nextSlide()">Next →</button>
+    <a href="../index.html">Live Observatory</a>
+  </div>
+
+  <!-- SLIDE 1 -->
+  <section class="slide active">
+    <div class="slide-kicker">Slide 1 / 7 · NASA Space Apps Challenge 2026 · Dancing with the SARs</div>
+    <div class="grid-2" style="align-items:center;">
+      <div>
+        <h1>OrbitalSAR Reflex</h1>
+        <p class="lead">
+          Translating NASA NISAR L-band &amp; Multi-SAR Earth rhythms into real-time surface-change
+          visualizations fused with Meteomatics weather intelligence and 24-byte edge telemetry.
+        </p>
+        <div class="box" style="margin-top:20px;">
+          <h3>Team OrbitalSAR Reflex (Universal Event)</h3>
+          <p><strong>Volkan Dagli</strong> (Team Owner · <code>@pCwOrM</code>) · <strong>Murat Emre ÖZKAYA</strong> · <strong>Prenses Metin</strong> (<code>@PrensesMTN</code>)</p>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;">
+        <img src="../assets/orbitalsar_reflex_mission_patch.jpg" alt="OrbitalSAR Reflex Mission Patch" class="patch-hero" />
+      </div>
+    </div>
+    <div class="foot"><span>Live App: https://pcworm.github.io/orbitalsar-reflex/</span><span>Repo: github.com/pCwOrM/orbitalsar-reflex</span></div>
+  </section>
+
+  <!-- SLIDE 2 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 2 / 7 · The Challenge &amp; Latency Bottleneck</div>
+    <div>
+      <h2>Seeing Through Clouds — Without Drowning in Gigabytes</h2>
+      <p class="lead">Earth's surface shifts continuously through floods, quakes, wildfires, and glacial surges. Radar penetrates darkness and storms, yet two gaps delay public action:</p>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>1. Perceptual Barrier</h3>
+        <p>Raw SAR covariance matrices (<code>GCOV</code>) and unwrapped interferograms (<code>GUNW</code>) are hard for communities and emergency planners to interpret alongside weather drivers.</p>
+      </div>
+      <div class="box">
+        <h3>2. Downlink Bottleneck</h3>
+        <div class="stat-big">1.8 GB → 24 B</div>
+        <p>Standard SAR scenes demand multi-gigabyte links. Critical flood or seismic trigger alerts wait hours unless distilled deterministically on the edge.</p>
+      </div>
+      <div class="box">
+        <h3>3. Ambiguous Backscatter</h3>
+        <p>Radar drops occur in both quiet lakes and flash floods. Cross-checking SAR coherence loss with high-resolution precipitation removes false alarms.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Dancing with the SARs</span><span>OrbitalSAR Reflex · Slide 2</span></div>
+  </section>
+
+  <!-- SLIDE 3 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 3 / 7 · Architecture &amp; Physical Scattering Model</div>
+    <div>
+      <h2>Dual-Frequency SAR + Meteomatics Physical Fusion</h2>
+      <p class="lead">Combining NASA NISAR L-band (~24 cm) canopy penetration with Sentinel-1 C-band (~5.6 cm) surface sensitivity and live meteorological telemetry.</p>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Verified Data Ingestion Pipeline</h3>
+        <ul>
+          <li><strong>NASA CMR NISAR L2:</strong> <code>C2854338529-ASF</code> (GCOV) &amp; <code>C2854335566-ASF</code> (GUNW InSAR)</li>
+          <li><strong>NASA ASF Vertex:</strong> Sentinel-1 GRD/SLC &amp; Quad-Pol UAVSAR L-band</li>
+          <li><strong>Microsoft Planetary Computer:</strong> Public STAC <code>sentinel-1-rtc</code></li>
+          <li><strong>Meteomatics API:</strong> <code>precip_24h:mm</code>, <code>t_2m:C</code>, wind &amp; RH synced to pass epochs</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Physical Scattering Signatures</h3>
+        <ul>
+          <li><strong>Specular Flood Drop:</strong> Δσ⁰ ≤ −3.0 dB &amp; Δγ ≥ 0.35 + rain verification</li>
+          <li><strong>Canopy Penetration (L-Band):</strong> Double-bounce trunk flooding &amp; RVI burn scars</li>
+          <li><strong>Repeat-Pass Deformation:</strong> GUNW interferometric phase shift &amp; coherence loss</li>
+          <li><strong>Cryosphere Surge:</strong> Sub-zero temperature gate isolating basal ice shear</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span>src/nasa_stac_client.py · src/sar_reflex_core.py</span><span>OrbitalSAR Reflex · Slide 3</span></div>
+  </section>
+
+  <!-- SLIDE 4 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 4 / 7 · 0-SRAM / 24-Byte Deterministic Edge Telemetry</div>
+    <div>
+      <h2>From Gigabyte Granules to 24-Byte Verified Reflex Packets</h2>
+      <p class="lead">Every anomaly is distilled into a fixed little-endian binary frame (<code>&lt;IffffBBH&gt;</code>) protected by CRC-16, achieving &gt;7.5×10⁷× alert bandwidth compression.</p>
+    </div>
+    <div class="code-bar">
+      Göksu Sample Frame (24 B): ab 89 d5 6a | ae 47 11 42 | 85 eb 07 42 | c1 a8 c0 c0 | 0a d7 23 3f | 01 | 91 | 19 71
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>Bytes 0–11 (Space-Time)</h3>
+        <p><code>uint32</code> epoch seconds + <code>float32</code> latitude &amp; longitude pinpoint exact disaster footprint.</p>
+      </div>
+      <div class="box">
+        <h3>Bytes 12–21 (SAR Physics)</h3>
+        <p><code>float32</code> Δσ⁰ (dB), <code>float32</code> Δγ coherence drop, <code>uint8</code> anomaly code (0–5) &amp; severity (0–255).</p>
+      </div>
+      <div class="box">
+        <h3>Bytes 22–23 (CRC-16)</h3>
+        <p>Deterministic <code>zlib.crc32(body) &amp; 0xFFFF</code> checksum blocks bit corruption across narrowband downlinks.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Bit-identical in Python &amp; Web Browser JS</span><span>OrbitalSAR Reflex · Slide 4</span></div>
+  </section>
+
+  <!-- SLIDE 5 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 5 / 7 · Hometown Case Study: Göksu Delta &amp; Mersin–Taurus Basin, Turkey</div>
+    <div>
+      <h2>Storm Pulse × NISAR L-Band Flood Reflex (36.32°N, 33.98°E)</h2>
+      <p class="lead">Our hometown basin connects Taurus mountain runoff to ecologically vital Göksu wetlands and coastal farms.</p>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Verified October 2026 Multi-Sensor Sync</h3>
+        <ul>
+          <li><strong>NASA NISAR GCOV:</strong> <code>NISAR_L2_PR_GCOV_033_100_A_020...</code> (2026-10-19)</li>
+          <li><strong>NASA NISAR GUNW:</strong> 12-day pair <code>2026-10-07 → 2026-10-19</code></li>
+          <li><strong>Planetary Computer S1:</strong> Live Mersin coastal <code>sentinel-1-rtc</code> swath</li>
+          <li><strong>Meteomatics 24h Rain Peak:</strong> <strong>42.59 mm/24h</strong> logged inside window</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>OrbitalSAR Reflex Verdict</h3>
+        <div class="stat-big" style="color:var(--accent);">FLOOD_INUNDATION</div>
+        <p>Δσ⁰ = <strong>−6.02 dB</strong> · Coherence Drop Δγ = <strong>0.64</strong> · Severity = <strong>145/255</strong> · Weather×SAR Confidence = <strong>74.5%</strong>.</p>
+        <p>Interactive layer wipe compares NISAR <code>HHHH</code> / <code>HVHV</code> polarizations against <code>GUNW</code> and Sentinel-1 VV/VH.</p>
+      </div>
+    </div>
+    <div class="foot"><span>Göksu Delta &amp; Mersin–Taurus Corridor</span><span>OrbitalSAR Reflex · Slide 5</span></div>
+  </section>
+
+  <!-- SLIDE 6 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 6 / 7 · Global Dance Across 4 Study Continents</div>
+    <div>
+      <h2>Four Distinct Surface Physics Regimes Verified Live</h2>
+    </div>
+    <div class="grid-3">
+      <div class="box">
+        <h3>Hayward Fault, CA (USA)</h3>
+        <p><strong>SURFACE_DEFORMATION (Sev 76)</strong><br/>NISAR <code>GUNW</code> (2026-10-09→21) + NASA Quad-Pol L-band <strong>UAVSAR</strong> track fault creep &amp; Delta levees.</p>
+      </div>
+      <div class="box">
+        <h3>Central Amazon (Brazil)</h3>
+        <p><strong>WILDFIRE_SCAR (Sev 93)</strong><br/>NISAR L-band <code>DHDH</code> penetrates closed canopy (ΔRVI = −0.65) where optical clouds blind passive sensors.</p>
+      </div>
+      <div class="box">
+        <h3>Malaspina Glacier (Alaska)</h3>
+        <p><strong>GLACIER_SURGE (Sev 98)</strong><br/>Sub-zero Meteomatics gating (−3.8 °C) isolates Δγ = 0.78 basal ice shear in NISAR InSAR pairs.</p>
+      </div>
+    </div>
+    <div class="box">
+      <h3>Live Browser NASA + STAC Explorer</h3>
+      <p>The live web observatory queries <code>cmr.earthdata.nasa.gov</code> &amp; Planetary Computer STAC in real time via CORS for instant citizen-science verification.</p>
+    </div>
+    <div class="foot"><span>4 Verified Regions · 12 NISAR + 12 S1-RTC + Weather Series</span><span>OrbitalSAR Reflex · Slide 6</span></div>
+  </section>
+
+  <!-- SLIDE 7 -->
+  <section class="slide">
+    <div class="slide-kicker">Slide 7 / 7 · Open-Source Impact, Verification &amp; Credits</div>
+    <div>
+      <h2>Open, Reproducible &amp; Tested for Spaceflight-Grade Clarity</h2>
+    </div>
+    <div class="grid-2">
+      <div class="box">
+        <h3>Verification &amp; Open Access</h3>
+        <ul>
+          <li><strong>Live Web Observatory:</strong> <code>https://pcworm.github.io/orbitalsar-reflex/</code></li>
+          <li><strong>MIT Open-Source Code:</strong> <code>github.com/pCwOrM/orbitalsar-reflex</code></li>
+          <li><strong>Automated Unit Tests:</strong> <code>10/10 PASS</code> verifying CRC-16 framing, classification thresholds &amp; JSON dataset integrity.</li>
+          <li><strong>Live Downloadable Binary:</strong> Export 24-byte <code>.bin</code> telemetry packets straight from browser sliders.</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3>NASA &amp; Global Collaborator Credits</h3>
+        <ul>
+          <li>NASA Earthdata CMR (NISAR L2 Provisional GCOV / GUNW)</li>
+          <li>NASA Alaska Satellite Facility (Sentinel-1 &amp; UAVSAR)</li>
+          <li>Microsoft Planetary Computer STAC (<code>sentinel-1-rtc</code>)</li>
+          <li>Meteomatics Weather API (Global Offer Partner)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot"><span>SI Disclosure: Mission patch &amp; scaffolding AI-assisted; zero NASA logos in AI assets.</span><span>OrbitalSAR Reflex · Slide 7 / 7</span></div>
+  </section>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    let idx = 0;
+    function show(n) {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("active", i === idx));
+      document.getElementById("counter").textContent = `Slide ${idx + 1} / ${slides.length}`;
+    }
+    function nextSlide() { show(idx + 1); }
+    function prevSlide() { show(idx - 1); }
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight" || e.key === " ") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    });
+  </script>
+</body>
+</html>

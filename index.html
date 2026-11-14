@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrbitalSAR Reflex — Autonomous NISAR &amp; Multi-SAR Change Observatory</title>
+  <meta name="description" content="NASA Space Apps Challenge 2026 (Dancing with the SARs) — Interactive NISAR L-Band, Sentinel-1 C-Band, Meteomatics Weather Fusion & 24-Byte FNS Edge Telemetry." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/orbitalsar_reflex_mission_patch.jpg" alt="OrbitalSAR Reflex Mission Patch" class="patch" />
+      <div>
+        <div class="kicker">NASA Space Apps Challenge 2026 · Dancing with the SARs</div>
+        <h1>OrbitalSAR Reflex</h1>
+        <div class="meta-line">Volkan Dagli · Murat Emre ÖZKAYA · Prenses Metin · Universal Event</div>
+      </div>
+    </div>
+    <nav class="top-actions">
+      <a class="btn btn-accent" href="demo/slides.html">7-Slide Demo Deck</a>
+      <a class="btn" href="docs/OrbitalSAR_Reflex_Demo_Slides.pdf" target="_blank" rel="noopener">Demo PDF (7 Slides)</a>
+      <a class="btn" href="https://github.com/pCwOrM/orbitalsar-reflex" target="_blank" rel="noopener">GitHub Repo</a>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="site-bar" aria-label="Study Sites">
+      <div class="site-bar-label">VERIFIED NASA NISAR × METEOMATICS STUDY SITES:</div>
+      <div id="siteTabs" class="site-tabs"></div>
+    </section>
+
+    <section class="hero-summary card">
+      <div class="hero-left">
+        <span id="siteBadge" class="pill">FLOOD_INUNDATION</span>
+        <h2 id="siteTitle">Loading study area...</h2>
+        <p id="siteTheme" class="theme-sub"></p>
+        <p id="siteDriver" class="driver-copy"></p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-box">
+          <div class="stat-label">Δσ⁰ Backscatter</div>
+          <div id="statLogRatio" class="stat-val">-- dB</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Coherence Drop (Δγ)</div>
+          <div id="statCoh" class="stat-val">--</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Peak 24h Rain</div>
+          <div id="statRain" class="stat-val">-- mm</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">24B Packet Compression</div>
+          <div class="stat-val">&gt;7.5×10⁷×</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-col">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>1. Orbital Swath Map (Live Footprints)</h3>
+            <p class="card-sub">NASA NISAR L2 GCOV/GUNW &amp; Planetary Computer Sentinel-1 RTC polygons</p>
+          </div>
+          <button id="liveQueryBtn" class="btn btn-sm" type="button">Query Live NASA + STAC</button>
+        </div>
+        <div id="sarMap" class="map-box"></div>
+        <div id="liveQueryStatus" class="status-line">Showing pre-verified snapshot footprints (click Query Live NASA + STAC for live CORS fetch).</div>
+        <div class="legend">
+          <span><i class="dot dot-gcov"></i> NISAR GCOV</span>
+          <span><i class="dot dot-gunw"></i> NISAR GUNW</span>
+          <span><i class="dot dot-s1"></i> Sentinel-1 RTC</span>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>2. Multi-Layer SAR Wipe Comparator</h3>
+            <p class="card-sub">Drag divider to compare NASA NISAR GCOV / Polarization / GUNW Interferogram / S1-RTC</p>
+          </div>
+        </div>
+        <div class="layer-controls">
+          <label>Left: <select id="leftLayerSelect"></select></label>
+          <label>Right: <select id="rightLayerSelect"></select></label>
+        </div>
+        <div id="wipeContainer" class="wipe-container">
+          <img id="imgRight" class="wipe-img" alt="Right SAR layer" crossorigin="anonymous" />
+          <div id="wipeOverlay" class="wipe-overlay">
+            <img id="imgLeft" class="wipe-img" alt="Left SAR layer" crossorigin="anonymous" />
+          </div>
+          <div id="wipeHandle" class="wipe-handle"><span class="wipe-knob">⇄</span></div>
+          <div id="wipeTagLeft" class="wipe-tag left">LEFT</div>
+          <div id="wipeTagRight" class="wipe-tag right">RIGHT</div>
+          <div id="imgFallback" class="img-fallback" hidden>
+            Loading remote NASA/STAC browse layer... <a id="rawImageLink" href="#" target="_blank" rel="noopener">Open Raw Image ↗</a>
+          </div>
+        </div>
+        <input id="wipeRange" type="range" min="5" max="95" value="50" aria-label="SAR wipe position" />
+        <div id="granuleCaption" class="status-line"></div>
+      </article>
+    </section>
+
+    <section class="two-col">
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>3. Meteomatics Weather × SAR Pass Timeline</h3>
+            <p class="card-sub">Synced 24h Precipitation (mm), 2m Temperature (°C) &amp; NISAR Acquisition Epochs</p>
+          </div>
+        </div>
+        <canvas id="weatherCanvas" width="640" height="270" class="chart-canvas"></canvas>
+        <div id="weatherNote" class="status-line"></div>
+      </article>
+
+      <article class="card">
+        <div class="card-head">
+          <div>
+            <h3>4. 0-SRAM / 24-Byte FNS Edge Reflex Simulator</h3>
+            <p class="card-sub">Bit-exact &lt;IffffBBH&gt; telemetry encoder (mirrors src/sar_reflex_core.py + CRC-16)</p>
+          </div>
+          <button id="downloadBinBtn" class="btn btn-sm btn-accent" type="button">Download 24B .bin</button>
+        </div>
+        <div class="slider-grid">
+          <div>
+            <label class="s-label">Pre σ⁰<sub>co</sub> <span id="vPre">0.14</span></label>
+            <input id="inPre" type="range" min="0.01" max="0.50" step="0.005" value="0.14" />
+          </div>
+          <div>
+            <label class="s-label">Post σ⁰<sub>co</sub> <span id="vPost">0.035</span></label>
+            <input id="inPost" type="range" min="0.01" max="0.50" step="0.005" value="0.035" />
+          </div>
+          <div>
+            <label class="s-label">Coherence Drop (Δγ) <span id="vCoh">0.64</span></label>
+            <input id="inCoh" type="range" min="0.00" max="1.00" step="0.01" value="0.64" />
+          </div>
+          <div>
+            <label class="s-label">ΔRVI (Veg Index Shift) <span id="vRvi">-0.11</span></label>
+            <input id="inRvi" type="range" min="-1.20" max="0.60" step="0.01" value="-0.11" />
+          </div>
+          <div>
+            <label class="s-label">24h Precip (Meteomatics) <span id="vRain">42.6 mm</span></label>
+            <input id="inRain" type="range" min="0" max="80" step="0.5" value="42.6" />
+          </div>
+          <div>
+            <label class="s-label">Air Temp (°C) <span id="vTemp">18.6 °C</span></label>
+            <input id="inTemp" type="range" min="-20" max="40" step="0.5" value="18.6" />
+          </div>
+        </div>
+        <div class="reflex-readout">
+          <span id="simBadge" class="pill">FLOOD_INUNDATION</span>
+          <span id="simSummary" class="sim-text"></span>
+        </div>
+        <div class="hex-title">24-Byte Deterministic FNS Frame (Little-Endian + CRC-16):</div>
+        <div id="hexDump" class="hex-box"></div>
+        <div id="byteBreakdown" class="byte-grid"></div>
+      </article>
+    </section>
+
+    <section class="card">
+      <div class="card-head">
+        <div>
+          <h3>5. Verified Granule Catalog &amp; NASA / Partner Data Lineage</h3>
+          <p class="card-sub">Direct links to public NASA Earthdata Cloud NISAR browse products, ASF Vertex, and Planetary Computer STAC</p>
+        </div>
+      </div>
+      <div id="granuleTableWrap" class="table-wrap"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>NASA &amp; Partner Data Used:</strong>
+      NASA CMR NISAR L2 Provisional (GCOV <code>C2854338529-ASF</code>, GUNW <code>C2854335566-ASF</code>) ·
+      NASA ASF Search Vertex (Sentinel-1 &amp; UAVSAR L-Band) ·
+      Microsoft Planetary Computer STAC (<code>sentinel-1-rtc</code>) ·
+      Meteomatics Weather API.
+    </div>
+    <div class="si-note">
+      <strong>Super Intelligence (SI) Transparency Disclosure:</strong>
+      Mission patch artwork (<code>assets/orbitalsar_reflex_mission_patch.jpg</code>) and scaffolding workflows were assisted by AI/SI tools without using any NASA logo, flag, or official emblem; all telemetry algorithms, packet framing, and API datasets were verified via automated tests in <code>tests/</code>.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>

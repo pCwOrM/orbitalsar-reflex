@@ -1,4 +1,4 @@
-"""Core SAR change-detection and 24-byte FNS telemetry encoder for OrbitalSAR Reflex."""
+"""Core SAR change-detection, dual-pol physics, and 24-byte FNS telemetry encoder for OrbitalSAR Reflex."""
 
 from __future__ import annotations
 
@@ -15,6 +15,8 @@ ANOMALY_CODES = {
     "FLOOD_INUNDATION": 1,
     "SURFACE_DEFORMATION": 2,
     "STRUCTURAL_DAMAGE": 3,
+    "WILDFIRE_SCAR": 4,
+    "GLACIER_SURGE": 5,
 }
 CODE_TO_ANOMALY = {code: label for label, code in ANOMALY_CODES.items()}
 
@@ -29,6 +31,9 @@ class SarObservation:
     pre_sigma0: float
     post_sigma0: float
     coherence_drop: float
+    rvi_delta: float = 0.0
+    precip_24h_mm: float = 0.0
+    temperature_c: float | None = None
 
 
 @dataclass(frozen=True)
@@ -40,6 +45,7 @@ class ReflexAlert:
     severity: int
     log_ratio_db: float
     coherence_drop: float
+    flood_weather_confidence: float
     packet_24b: bytes
 
 
@@ -50,7 +56,33 @@ def compute_log_ratio_db(pre_sigma0: float, post_sigma0: float) -> float:
     return 10.0 * math.log10(post_sigma0 / pre_sigma0)
 
 
-def classify_sar_anomaly(log_ratio_db: float, coherence_drop: float) -> tuple[str, int]:
+def compute_dual_pol_rvi(co_pol_sigma0: float, cross_pol_sigma0: float) -> float:
+    """Compute Dual-Pol Radar Vegetation Index: 4 * cross / (co + cross) in [0, 4]."""
+    if co_pol_sigma0 < 0.0 or cross_pol_sigma0 < 0.0:
+        raise ValueError("Backscatter intensities must be non-negative.")
+    denom = co_pol_sigma0 + cross_pol_sigma0
+    if denom == 0.0:
+        return 0.0
+    return (4.0 * cross_pol_sigma0) / denom
+
+
+def compute_weather_flood_confidence(
+    log_ratio_db: float, coherence_drop: float, precip_24h_mm: float
+) -> float:
+    """Fuse SAR flood backscatter drop with Meteomatics 24h precipitation (0.0 to 1.0)."""
+    sar_component = min(1.0, max(0.0, (-log_ratio_db - 1.5) / 6.5)) * 0.6
+    coh_component = min(1.0, max(0.0, coherence_drop)) * 0.2
+    rain_component = min(1.0, max(0.0, precip_24h_mm / 25.0)) * 0.2
+    return round(sar_component + coh_component + rain_component, 4)
+
+
+def classify_sar_anomaly(
+    log_ratio_db: float,
+    coherence_drop: float,
+    *,
+    rvi_delta: float = 0.0,
+    temperature_c: float | None = None,
+) -> tuple[str, int]:
     """Classify SAR change-detection signature into (anomaly_label, severity_0_255)."""
     if not 0.0 <= coherence_drop <= 1.0:
         raise ValueError("coherence_drop must be within [0.0, 1.0].")
@@ -59,12 +91,19 @@ def classify_sar_anomaly(log_ratio_db: float, coherence_drop: float) -> tuple[st
         label = "FLOOD_INUNDATION"
     elif log_ratio_db >= 3.0 and coherence_drop >= 0.45:
         label = "STRUCTURAL_DAMAGE"
+    elif rvi_delta <= -0.25 and coherence_drop >= 0.35:
+        label = "WILDFIRE_SCAR"
+    elif temperature_c is not None and temperature_c <= 2.0 and coherence_drop >= 0.50:
+        label = "GLACIER_SURGE"
     elif coherence_drop >= 0.35:
         label = "SURFACE_DEFORMATION"
     else:
         label = "NOMINAL"
 
-    raw_score = min(1.0, (abs(log_ratio_db) / 10.0) * 0.5 + coherence_drop * 0.5)
+    raw_score = min(
+        1.0,
+        (abs(log_ratio_db) / 10.0) * 0.45 + coherence_drop * 0.45 + min(0.1, abs(rvi_delta) * 0.1),
+    )
     severity = 0 if label == "NOMINAL" else max(1, min(255, int(round(raw_score * 255))))
     return label, severity
 
@@ -129,8 +168,16 @@ def decode_fns_packet_24b(packet: bytes) -> dict[str, float | int | str]:
 def evaluate_observation(obs: SarObservation) -> ReflexAlert:
     """Run full SAR change-detection and return a ReflexAlert with 24-byte packet."""
     log_ratio_db = compute_log_ratio_db(obs.pre_sigma0, obs.post_sigma0)
-    label, severity = classify_sar_anomaly(log_ratio_db, obs.coherence_drop)
+    label, severity = classify_sar_anomaly(
+        log_ratio_db,
+        obs.coherence_drop,
+        rvi_delta=obs.rvi_delta,
+        temperature_c=obs.temperature_c,
+    )
     code = ANOMALY_CODES[label]
+    confidence = compute_weather_flood_confidence(
+        log_ratio_db, obs.coherence_drop, obs.precip_24h_mm
+    )
     packet = encode_fns_packet_24b(
         timestamp_s=obs.timestamp_s,
         lat=obs.lat,
@@ -146,5 +193,6 @@ def evaluate_observation(obs: SarObservation) -> ReflexAlert:
         severity=severity,
         log_ratio_db=log_ratio_db,
         coherence_drop=obs.coherence_drop,
+        flood_weather_confidence=confidence,
         packet_24b=packet,
     )

@@ -1,0 +1,1666 @@
+{
+  "generated_at_utc": "2026-11-14T17:48:19Z",
+  "sources": {
+    "nasa_cmr_nisar": [
+      "C2854338529-ASF",
+      "C2854335566-ASF"
+    ],
+    "nasa_asf_search": "https://api.daac.asf.alaska.edu/services/search/param",
+    "microsoft_planetary_computer_stac": "https://planetarycomputer.microsoft.com/api/stac/v1/collections/sentinel-1-rtc",
+    "meteomatics_weather_api": "https://api.meteomatics.com"
+  },
+  "study_sites": [
+    {
+      "id": "goksu-mersin",
+      "name": "G\u00f6ksu Delta & Mersin\u2013Taurus Basin, Turkey",
+      "theme": "Wetland Rhythm, Floodplains & Coastal Soil Moisture (Hometown Study Area)",
+      "center": [
+        36.32,
+        33.98
+      ],
+      "bbox": [
+        33.5,
+        36.0,
+        34.8,
+        37.2
+      ],
+      "physical_driver": "Autumn convective storm pulses across the G\u00f6ksu watershed raise surface dielectric constant and trigger shallow lagoon inundation; L-band NISAR penetrates coastal reeds while Sentinel-1 C-band captures open specular water attenuation (-6.02 dB).",
+      "observation_inputs": {
+        "timestamp_s": 1792379307,
+        "pre_sigma0": 0.14,
+        "post_sigma0": 0.035,
+        "coherence_drop": 0.64,
+        "pre_cross_sigma0": 0.038,
+        "post_cross_sigma0": 0.008,
+        "temperature_c": 18.6,
+        "rvi_pre": 0.8539,
+        "rvi_post": 0.7442,
+        "rvi_delta": -0.1097,
+        "peak_precip_24h_mm": 42.59
+      },
+      "reflex_alert": {
+        "anomaly_label": "FLOOD_INUNDATION",
+        "anomaly_code": 1,
+        "severity": 145,
+        "log_ratio_db": -6.0206,
+        "coherence_drop": 0.64,
+        "flood_weather_confidence": 0.7453,
+        "packet_24b_hex": "ab89d56aae47114285eb0742c1a8c0c00ad7233f01911971",
+        "packet_size_bytes": 24
+      },
+      "nasa_nisar_gcov": [
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-19T03:01:19.000Z",
+          "time_end": "2026-10-19T03:01:54.999Z",
+          "polygon_latlon": [
+            [
+              35.8931,
+              33.98576
+            ],
+            [
+              38.00077,
+              33.18977
+            ],
+            [
+              37.31404,
+              30.48159
+            ],
+            [
+              35.22351,
+              31.33664
+            ],
+            [
+              35.8931,
+              33.98576
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_100_A_020_2005_DHDH_A_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-19T03:00:56.000Z",
+          "time_end": "2026-10-19T03:01:20.999Z",
+          "polygon_latlon": [
+            [
+              34.54135,
+              34.46297
+            ],
+            [
+              36.01052,
+              33.94355
+            ],
+            [
+              35.3399,
+              31.29082
+            ],
+            [
+              33.88312,
+              31.85387
+            ],
+            [
+              34.54135,
+              34.46297
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_100_A_019_2005_DHDH_A_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-17T16:32:56.000Z",
+          "time_end": "2026-10-17T16:33:25.999Z",
+          "polygon_latlon": [
+            [
+              36.05902,
+              33.28218
+            ],
+            [
+              34.29589,
+              32.66014
+            ],
+            [
+              33.63738,
+              35.27063
+            ],
+            [
+              35.38559,
+              35.94526
+            ],
+            [
+              36.05902,
+              33.28218
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_079_D_071_2005_DHDH_A_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        }
+      ],
+      "nasa_nisar_gunw": [
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-07T03:01:19.000Z",
+          "time_end": "2026-10-19T03:01:54.999Z",
+          "polygon_latlon": [
+            [
+              35.91408,
+              33.97918
+            ],
+            [
+              37.9631,
+              33.2049
+            ],
+            [
+              37.27673,
+              30.4978
+            ],
+            [
+              35.24426,
+              31.32901
+            ],
+            [
+              35.91408,
+              33.97918
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_100_A_020_033_2000_SH_20261007T030119_20261007T030153_20261019T030119_20261019T030154_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-07T03:00:56.000Z",
+          "time_end": "2026-10-19T03:01:20.999Z",
+          "polygon_latlon": [
+            [
+              34.56235,
+              34.45657
+            ],
+            [
+              36.03149,
+              33.93695
+            ],
+            [
+              35.36066,
+              31.28317
+            ],
+            [
+              33.90389,
+              31.84648
+            ],
+            [
+              34.56235,
+              34.45657
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001/NISAR_L2_PR_GUNW_032_100_A_019_033_2000_SH_20261007T030056_20261007T030120_20261019T030056_20261019T030120_P05023_N_P_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-05T16:32:55.000Z",
+          "time_end": "2026-10-17T16:33:25.999Z",
+          "polygon_latlon": [
+            [
+              36.10004,
+              33.2962
+            ],
+            [
+              34.27816,
+              32.65327
+            ],
+            [
+              33.61981,
+              35.26335
+            ],
+            [
+              35.42626,
+              35.96069
+            ],
+            [
+              36.10004,
+              33.2962
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_079_D_071_033_2000_SH_20261005T163255_20261005T163325_20261017T163256_20261017T163325_P05023_N_F_J_001_NATIVE.png"
+          ]
+        }
+      ],
+      "nasa_asf_scenes": [
+        {
+          "granule_name": "S1D_IW_RAW__0SDV_20261114T035033_20261114T035105_005458_00A6C6_F20A",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-14T03:50:33Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1D_IW_RAW__0SDV_20261114T035033_20261114T035105_005458_00A6C6_F20A",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-14T03:50:33Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1D_IW_SLC__1SDV_20261114T035036_20261114T035103_005458_00A6C6_E8D3",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-14T03:50:36Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": null,
+          "url": null
+        }
+      ],
+      "planetary_computer_s1_rtc": [
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261114T035037_20261114T035102_005458_00A6C6_rtc",
+          "datetime": "2026-11-14T03:50:49.761448Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            31.29210995604746,
+            34.942286752629045,
+            34.36639938180688,
+            36.84174075060653
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261114T035037_20261114T035102_005458_00A6C6_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261114T035037_20261114T035102_005458_00A6C6_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261114T035012_20261114T035037_005458_00A6C6_rtc",
+          "datetime": "2026-11-14T03:50:24.761465Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            31.591453489187916,
+            36.44693460546913,
+            34.703214641966554,
+            38.34536210171578
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261114T035012_20261114T035037_005458_00A6C6_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261114T035012_20261114T035037_005458_00A6C6_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261113T154949_20261113T155014_005451_00A68F_rtc",
+          "datetime": "2026-11-13T15:50:02.246601Z",
+          "orbit_state": "ascending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            30.429942798850163,
+            36.33588909689569,
+            33.55730486417687,
+            38.2342981655831
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261113T154949_20261113T155014_005451_00A68F_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261113T154949_20261113T155014_005451_00A68F_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        }
+      ],
+      "meteomatics_weather": [
+        {
+          "date": "2026-10-05T00:00:00Z",
+          "t_2m:C": 18.3,
+          "precip_24h:mm": 22.23,
+          "wind_speed_10m:ms": 3.5,
+          "relative_humidity_2m:p": 67.1
+        },
+        {
+          "date": "2026-10-07T00:00:00Z",
+          "t_2m:C": 19.2,
+          "precip_24h:mm": 3.29,
+          "wind_speed_10m:ms": 1.9,
+          "relative_humidity_2m:p": 55.9
+        },
+        {
+          "date": "2026-10-09T00:00:00Z",
+          "t_2m:C": 20.5,
+          "precip_24h:mm": 0.03,
+          "wind_speed_10m:ms": 2.0,
+          "relative_humidity_2m:p": 55.3
+        },
+        {
+          "date": "2026-10-11T00:00:00Z",
+          "t_2m:C": 23.9,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 2.2,
+          "relative_humidity_2m:p": 41.6
+        },
+        {
+          "date": "2026-10-13T00:00:00Z",
+          "t_2m:C": 19.5,
+          "precip_24h:mm": 33.83,
+          "wind_speed_10m:ms": 1.4,
+          "relative_humidity_2m:p": 85.1
+        },
+        {
+          "date": "2026-10-15T00:00:00Z",
+          "t_2m:C": 19.3,
+          "precip_24h:mm": 42.59,
+          "wind_speed_10m:ms": 0.8,
+          "relative_humidity_2m:p": 92.5
+        },
+        {
+          "date": "2026-10-17T00:00:00Z",
+          "t_2m:C": 19.6,
+          "precip_24h:mm": 2.88,
+          "wind_speed_10m:ms": 1.3,
+          "relative_humidity_2m:p": 90.6
+        },
+        {
+          "date": "2026-10-19T00:00:00Z",
+          "t_2m:C": 15.3,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 1.5,
+          "relative_humidity_2m:p": 79.6
+        },
+        {
+          "date": "2026-10-21T00:00:00Z",
+          "t_2m:C": 19.1,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 2.6,
+          "relative_humidity_2m:p": 50.4
+        }
+      ]
+    },
+    {
+      "id": "hayward-california",
+      "name": "Hayward Fault & Sacramento Delta, California, USA",
+      "theme": "Tectonic Shear, Land Subsidence & Levee Integrity (NISAR + UAVSAR L-Band)",
+      "center": [
+        37.85,
+        -122.1
+      ],
+      "bbox": [
+        -122.6,
+        37.2,
+        -121.0,
+        38.6
+      ],
+      "physical_driver": "Repeat-pass L-band interferometry (NISAR GUNW & airborne NASA UAVSAR) preserves phase coherence over vegetated fault scarps and Delta agricultural levees, isolating cm-scale subsidence and fault creep from moisture variability.",
+      "observation_inputs": {
+        "timestamp_s": 1792588670,
+        "pre_sigma0": 0.11,
+        "post_sigma0": 0.135,
+        "coherence_drop": 0.56,
+        "pre_cross_sigma0": 0.025,
+        "post_cross_sigma0": 0.028,
+        "temperature_c": 16.2,
+        "rvi_pre": 0.7407,
+        "rvi_post": 0.6871,
+        "rvi_delta": -0.0536,
+        "peak_precip_24h_mm": 0.0
+      },
+      "reflex_alert": {
+        "anomaly_label": "SURFACE_DEFORMATION",
+        "anomaly_code": 2,
+        "severity": 76,
+        "log_ratio_db": 0.8894,
+        "coherence_drop": 0.56,
+        "flood_weather_confidence": 0.112,
+        "packet_24b_hex": "7ebbd86a666617423333f4c26eb0633f295c0f3f024c091e",
+        "packet_size_bytes": 24
+      },
+      "nasa_nisar_gcov": [
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T13:17:50.000Z",
+          "time_end": "2026-10-21T13:18:24.999Z",
+          "polygon_latlon": [
+            [
+              37.8915,
+              -120.70532
+            ],
+            [
+              39.93576,
+              -121.51898
+            ],
+            [
+              39.22221,
+              -124.32805
+            ],
+            [
+              37.19403,
+              -123.45875
+            ],
+            [
+              37.8915,
+              -120.70532
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_021_4005_DHDH_A_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T13:17:16.000Z",
+          "time_end": "2026-10-21T13:17:51.999Z",
+          "polygon_latlon": [
+            [
+              35.89647,
+              -119.972
+            ],
+            [
+              38.00753,
+              -120.75433
+            ],
+            [
+              37.31008,
+              -123.50708
+            ],
+            [
+              35.21736,
+              -122.65984
+            ],
+            [
+              35.89647,
+              -119.972
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_020_4005_DHDH_A_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-16T13:25:35.000Z",
+          "time_end": "2026-10-16T13:26:13.999Z",
+          "polygon_latlon": [
+            [
+              35.85336,
+              -122.09971
+            ],
+            [
+              38.14063,
+              -122.9467
+            ],
+            [
+              37.4626,
+              -125.6208
+            ],
+            [
+              35.19544,
+              -124.70219
+            ],
+            [
+              35.85336,
+              -122.09971
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_NATIVE_B_VHVH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_063_A_020_0005_NADV_A_20261016T132535_20261016T132613_P05023_N_F_J_001_NATIVE_B_VVVV.png"
+          ]
+        }
+      ],
+      "nasa_nisar_gunw": [
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T13:17:50.000Z",
+          "time_end": "2026-10-21T13:18:24.999Z",
+          "polygon_latlon": [
+            [
+              37.90442,
+              -120.71209
+            ],
+            [
+              39.94878,
+              -121.52555
+            ],
+            [
+              39.23523,
+              -124.33455
+            ],
+            [
+              37.20708,
+              -123.46493
+            ],
+            [
+              37.90442,
+              -120.71209
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_021_033_4000_SH_20261009T131750_20261009T131824_20261021T131750_20261021T131824_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T13:17:16.000Z",
+          "time_end": "2026-10-21T13:17:51.999Z",
+          "polygon_latlon": [
+            [
+              35.90964,
+              -119.97761
+            ],
+            [
+              38.02072,
+              -120.76003
+            ],
+            [
+              37.32313,
+              -123.51328
+            ],
+            [
+              35.23044,
+              -122.66574
+            ],
+            [
+              35.90964,
+              -119.97761
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_020_033_4000_SH_20261009T131716_20261009T131751_20261021T131716_20261021T131751_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-03T02:56:38.000Z",
+          "time_end": "2026-10-15T02:57:13.999Z",
+          "polygon_latlon": [
+            [
+              38.08981,
+              -122.0761
+            ],
+            [
+              35.97802,
+              -122.85574
+            ],
+            [
+              35.30146,
+              -120.17721
+            ],
+            [
+              37.39224,
+              -119.32212
+            ],
+            [
+              38.08981,
+              -122.0761
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_042_D_070_033_4000_SH_20261003T025638_20261003T025713_20261015T025639_20261015T025713_P05023_N_F_J_001_NATIVE.png"
+          ]
+        }
+      ],
+      "nasa_asf_scenes": [
+        {
+          "granule_name": "Haywrd_15302_25022_010_250630_L090_CX_01",
+          "platform": "UAVSAR",
+          "start_time": "2025-06-30T20:05:29Z",
+          "polarization": [
+            "HH",
+            "HV",
+            "VH",
+            "VV"
+          ],
+          "beam_mode": null,
+          "flight_direction": null,
+          "browse_url": "https://cumulus.asf.earthdatacloud.nasa.gov/BROWSE/UAVSAR/UAVSAR/UAVSAR_POLSAR/Haywrd_15302_25022_010_250630_L090_CX_01/Haywrd_15302_25022_010_250630_L090_CX_01.gif",
+          "url": null
+        },
+        {
+          "granule_name": "Haywrd_05524_25022_009_250630_L090_CX_01",
+          "platform": "UAVSAR",
+          "start_time": "2025-06-30T19:40:15Z",
+          "polarization": [
+            "HH",
+            "HV",
+            "VH",
+            "VV"
+          ],
+          "beam_mode": null,
+          "flight_direction": null,
+          "browse_url": "https://cumulus.asf.earthdatacloud.nasa.gov/BROWSE/UAVSAR/UAVSAR/UAVSAR_POLSAR/Haywrd_05524_25022_009_250630_L090_CX_01/Haywrd_05524_25022_009_250630_L090_CX_01.gif",
+          "url": null
+        },
+        {
+          "granule_name": "Haywrd_34001_25022_004_250630_L090_CX_01",
+          "platform": "UAVSAR",
+          "start_time": "2025-06-30T17:40:37Z",
+          "polarization": [
+            "HH",
+            "HV",
+            "VH",
+            "VV"
+          ],
+          "beam_mode": null,
+          "flight_direction": null,
+          "browse_url": "https://cumulus.asf.earthdatacloud.nasa.gov/BROWSE/UAVSAR/UAVSAR/UAVSAR_POLSAR/Haywrd_34001_25022_004_250630_L090_CX_01/Haywrd_34001_25022_004_250630_L090_CX_01.gif",
+          "url": null
+        }
+      ],
+      "planetary_computer_s1_rtc": [
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261112T015903_20261112T015928_005428_00A5BC_rtc",
+          "datetime": "2026-11-12T01:59:16.473450Z",
+          "orbit_state": "ascending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -122.09407581740582,
+            37.50526522196313,
+            -118.8920568551011,
+            39.398828032878505
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261112T015903_20261112T015928_005428_00A5BC_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261112T015903_20261112T015928_005428_00A5BC_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261112T015838_20261112T015903_005428_00A5BC_rtc",
+          "datetime": "2026-11-12T01:58:51.473207Z",
+          "orbit_state": "ascending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -121.71510350156478,
+            35.99941153800781,
+            -118.57748527097064,
+            37.89856923183998
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261112T015838_20261112T015903_005428_00A5BC_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261112T015838_20261112T015903_005428_00A5BC_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1C_IW_GRDH_1SDV_20261111T140725_20261111T140750_010290_0148CA_rtc",
+          "datetime": "2026-11-11T14:07:38.209471Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -122.90816450186112,
+            35.38378193822482,
+            -119.81851048673576,
+            37.28092183540193
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261111T140725_20261111T140750_010290_0148CA_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261111T140725_20261111T140750_010290_0148CA_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        }
+      ],
+      "meteomatics_weather": [
+        {
+          "date": "2026-10-07T00:00:00Z",
+          "t_2m:C": 33.6,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 3.3,
+          "relative_humidity_2m:p": 23.8
+        },
+        {
+          "date": "2026-10-09T00:00:00Z",
+          "t_2m:C": 30.3,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 2.8,
+          "relative_humidity_2m:p": 25.6
+        },
+        {
+          "date": "2026-10-11T00:00:00Z",
+          "t_2m:C": 15.6,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 8.1,
+          "relative_humidity_2m:p": 63.1
+        },
+        {
+          "date": "2026-10-13T00:00:00Z",
+          "t_2m:C": 18.0,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 4.0,
+          "relative_humidity_2m:p": 49.5
+        },
+        {
+          "date": "2026-10-15T00:00:00Z",
+          "t_2m:C": 25.7,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 2.6,
+          "relative_humidity_2m:p": 21.7
+        },
+        {
+          "date": "2026-10-17T00:00:00Z",
+          "t_2m:C": 31.4,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 1.9,
+          "relative_humidity_2m:p": 14.2
+        },
+        {
+          "date": "2026-10-19T00:00:00Z",
+          "t_2m:C": 18.5,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 5.8,
+          "relative_humidity_2m:p": 62.5
+        },
+        {
+          "date": "2026-10-21T00:00:00Z",
+          "t_2m:C": 19.9,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 3.8,
+          "relative_humidity_2m:p": 39.5
+        }
+      ]
+    },
+    {
+      "id": "central-amazon",
+      "name": "Central Amazon Floodplain, Brazil",
+      "theme": "Canopy Penetration, Double-Bounce Inundation & Forest Disturbance",
+      "center": [
+        -2.95,
+        -60.6
+      ],
+      "bbox": [
+        -62.0,
+        -4.0,
+        -59.0,
+        -2.0
+      ],
+      "physical_driver": "Unlike short C-band waves reflected by top leaves, NISAR L-band (~24 cm wavelength) penetrates dense tropical canopy to bounce off flooded trunks (double-bounce enhancement) and reveals sub-canopy wildfire/clearing loss via sharp RVI drops.",
+      "observation_inputs": {
+        "timestamp_s": 1792576010,
+        "pre_sigma0": 0.22,
+        "post_sigma0": 0.17,
+        "coherence_drop": 0.52,
+        "pre_cross_sigma0": 0.12,
+        "post_cross_sigma0": 0.03,
+        "temperature_c": 27.4,
+        "rvi_pre": 1.4118,
+        "rvi_post": 0.6,
+        "rvi_delta": -0.8118,
+        "peak_precip_24h_mm": 72.27
+      },
+      "reflex_alert": {
+        "anomaly_label": "WILDFIRE_SCAR",
+        "anomaly_code": 4,
+        "severity": 93,
+        "log_ratio_db": -1.1197,
+        "coherence_drop": 0.52,
+        "flood_weather_confidence": 0.304,
+        "packet_24b_hex": "0a8ad86acdcc3cc0666672c290538fbfb81e053f045d0d41",
+        "packet_size_bytes": 24
+      },
+      "nasa_nisar_gcov": [
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T09:46:50.000Z",
+          "time_end": "2026-10-21T09:47:27.999Z",
+          "polygon_latlon": [
+            [
+              -2.09853,
+              -59.97185
+            ],
+            [
+              0.16868,
+              -60.46672
+            ],
+            [
+              -0.31793,
+              -62.67551
+            ],
+            [
+              -2.57798,
+              -62.18587
+            ],
+            [
+              -2.09853,
+              -59.97185
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_133_A_001_2005_DHDH_M_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T09:46:22.000Z",
+          "time_end": "2026-10-21T09:46:57.999Z",
+          "polygon_latlon": [
+            [
+              -3.76974,
+              -59.61304
+            ],
+            [
+              -1.62188,
+              -60.07854
+            ],
+            [
+              -2.10306,
+              -62.2923
+            ],
+            [
+              -4.2443,
+              -61.8342
+            ],
+            [
+              -3.76974,
+              -59.61304
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_132_A_176_4005_DHDH_A_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T09:46:16.000Z",
+          "time_end": "2026-10-21T09:46:19.999Z",
+          "polygon_latlon": [
+            [
+              -4.12907,
+              -59.54214
+            ],
+            [
+              -3.89039,
+              -59.59327
+            ],
+            [
+              -4.36357,
+              -61.81022
+            ],
+            [
+              -4.60146,
+              -61.75981
+            ],
+            [
+              -4.12907,
+              -59.54214
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001/NISAR_L2_PR_GCOV_033_132_A_175_4005_DHDH_A_20261021T094616_20261021T094619_P05023_N_P_J_001_NATIVE_B_HVHV.png"
+          ]
+        }
+      ],
+      "nasa_nisar_gunw": [
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T09:46:49.000Z",
+          "time_end": "2026-10-21T09:47:27.999Z",
+          "polygon_latlon": [
+            [
+              -2.1444,
+              -59.96341
+            ],
+            [
+              0.18264,
+              -60.47059
+            ],
+            [
+              -0.30402,
+              -62.67935
+            ],
+            [
+              -2.62355,
+              -62.17687
+            ],
+            [
+              -2.1444,
+              -59.96341
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_133_A_001_033_2000_SH_20261009T094649_20261009T094727_20261021T094650_20261021T094727_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T09:46:22.000Z",
+          "time_end": "2026-10-21T09:46:57.999Z",
+          "polygon_latlon": [
+            [
+              -3.75579,
+              -59.61675
+            ],
+            [
+              -1.608,
+              -60.08265
+            ],
+            [
+              -2.08916,
+              -62.29612
+            ],
+            [
+              -4.2304,
+              -61.83794
+            ],
+            [
+              -3.75579,
+              -59.61675
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_132_A_176_033_4000_SH_20261009T094622_20261009T094657_20261021T094622_20261021T094657_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-04T22:25:22.000Z",
+          "time_end": "2026-10-16T22:25:57.999Z",
+          "polygon_latlon": [
+            [
+              -3.73717,
+              -62.53106
+            ],
+            [
+              -5.88519,
+              -62.99232
+            ],
+            [
+              -6.35928,
+              -60.73228
+            ],
+            [
+              -4.21775,
+              -60.28174
+            ],
+            [
+              -3.73717,
+              -62.53106
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_068_D_091_033_2000_SH_20261004T222522_20261004T222557_20261016T222521_20261016T222557_P05023_N_F_J_001_NATIVE.png"
+          ]
+        }
+      ],
+      "nasa_asf_scenes": [
+        {
+          "granule_name": "S1C_IW_RAW__0SDV_20261112T222214_20261112T222246_010309_014975_B9EC",
+          "platform": "Sentinel-1C",
+          "start_time": "2026-11-12T22:22:14Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "ASCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1C_IW_RAW__0SDV_20261112T222214_20261112T222246_010309_014975_B9EC",
+          "platform": "Sentinel-1C",
+          "start_time": "2026-11-12T22:22:14Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "ASCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1C_IW_SLC__1SDV_20261112T222213_20261112T222244_010309_014975_0695",
+          "platform": "Sentinel-1C",
+          "start_time": "2026-11-12T22:22:13Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "ASCENDING",
+          "browse_url": null,
+          "url": null
+        }
+      ],
+      "planetary_computer_s1_rtc": [
+        {
+          "id": "S1C_IW_GRDH_1SDV_20261112T222213_20261112T222243_010309_014975_rtc",
+          "datetime": "2026-11-12T22:22:28.371758Z",
+          "orbit_state": "ascending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -62.248902784672694,
+            -2.0074703321999814,
+            -59.688171008982025,
+            0.23626901124744998
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261112T222213_20261112T222243_010309_014975_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261112T222213_20261112T222243_010309_014975_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261108T094722_20261108T094747_005374_00A3F1_rtc",
+          "datetime": "2026-11-08T09:47:35.277454Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -63.18709170437416,
+            -5.490104793401851,
+            -60.64565981549224,
+            -3.4932037245989394
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261108T094722_20261108T094747_005374_00A3F1_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261108T094722_20261108T094747_005374_00A3F1_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261108T094657_20261108T094722_005374_00A3F1_rtc",
+          "datetime": "2026-11-08T09:47:10.277357Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -62.855946337404,
+            -3.979641939983598,
+            -60.32113250485379,
+            -1.9869858304049506
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261108T094657_20261108T094722_005374_00A3F1_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261108T094657_20261108T094722_005374_00A3F1_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        }
+      ],
+      "meteomatics_weather": [
+        {
+          "date": "2026-10-07T00:00:00Z",
+          "t_2m:C": 32.1,
+          "precip_24h:mm": 0.71,
+          "wind_speed_10m:ms": 3.6,
+          "relative_humidity_2m:p": 64.2
+        },
+        {
+          "date": "2026-10-09T00:00:00Z",
+          "t_2m:C": 32.6,
+          "precip_24h:mm": 0.04,
+          "wind_speed_10m:ms": 0.9,
+          "relative_humidity_2m:p": 58.6
+        },
+        {
+          "date": "2026-10-11T00:00:00Z",
+          "t_2m:C": 32.2,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 1.9,
+          "relative_humidity_2m:p": 62.9
+        },
+        {
+          "date": "2026-10-13T00:00:00Z",
+          "t_2m:C": 30.5,
+          "precip_24h:mm": 0.34,
+          "wind_speed_10m:ms": 3.0,
+          "relative_humidity_2m:p": 73.8
+        },
+        {
+          "date": "2026-10-15T00:00:00Z",
+          "t_2m:C": 31.4,
+          "precip_24h:mm": 5.65,
+          "wind_speed_10m:ms": 2.3,
+          "relative_humidity_2m:p": 68.2
+        },
+        {
+          "date": "2026-10-17T00:00:00Z",
+          "t_2m:C": 31.6,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 1.7,
+          "relative_humidity_2m:p": 66.1
+        },
+        {
+          "date": "2026-10-19T00:00:00Z",
+          "t_2m:C": 26.9,
+          "precip_24h:mm": 72.27,
+          "wind_speed_10m:ms": 1.3,
+          "relative_humidity_2m:p": 88.1
+        },
+        {
+          "date": "2026-10-21T00:00:00Z",
+          "t_2m:C": 28.7,
+          "precip_24h:mm": 18.18,
+          "wind_speed_10m:ms": 0.2,
+          "relative_humidity_2m:p": 79.5
+        }
+      ]
+    },
+    {
+      "id": "malaspina-alaska",
+      "name": "Malaspina & Yakutat Glacier Corridor, Alaska, USA",
+      "theme": "Glacier Velocity, Ice Marginal Surge & Phase Decorrelation",
+      "center": [
+        60.05,
+        -140.4
+      ],
+      "bbox": [
+        -142.0,
+        59.5,
+        -138.0,
+        61.0
+      ],
+      "physical_driver": "Rapid sub-glacial basal sliding across piedmont glacier lobes shears surface crevasses within a 12-day repeat cycle, causing strong interferometric coherence loss in NISAR GUNW pairs while cold sub-zero air temperatures confirm ice kinematics rather than rain melt.",
+      "observation_inputs": {
+        "timestamp_s": 1792589081,
+        "pre_sigma0": 0.18,
+        "post_sigma0": 0.21,
+        "coherence_drop": 0.78,
+        "pre_cross_sigma0": 0.04,
+        "post_cross_sigma0": 0.045,
+        "temperature_c": -3.8,
+        "rvi_pre": 0.7273,
+        "rvi_post": 0.7059,
+        "rvi_delta": -0.0214,
+        "peak_precip_24h_mm": 0.0
+      },
+      "reflex_alert": {
+        "anomaly_label": "GLACIER_SURGE",
+        "anomaly_code": 5,
+        "severity": 98,
+        "log_ratio_db": 0.6695,
+        "coherence_drop": 0.78,
+        "flood_weather_confidence": 0.156,
+        "packet_24b_hex": "19bdd86a3333704266660cc340622b3f14ae473f05624ba5",
+        "packet_size_bytes": 24
+      },
+      "nasa_nisar_gcov": [
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T13:24:41.000Z",
+          "time_end": "2026-10-21T13:25:18.999Z",
+          "polygon_latlon": [
+            [
+              61.31394,
+              -135.15895
+            ],
+            [
+              63.36393,
+              -137.48268
+            ],
+            [
+              62.17639,
+              -141.79712
+            ],
+            [
+              60.20328,
+              -139.26557
+            ],
+            [
+              61.31394,
+              -135.15895
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_033_4005_DHDH_A_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T13:24:06.000Z",
+          "time_end": "2026-10-21T13:24:42.999Z",
+          "polygon_latlon": [
+            [
+              59.39944,
+              -133.25257
+            ],
+            [
+              61.42475,
+              -135.26547
+            ],
+            [
+              60.30766,
+              -139.39304
+            ],
+            [
+              58.35169,
+              -137.17733
+            ],
+            [
+              59.39944,
+              -133.25257
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_135_A_032_4005_DHDH_A_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001",
+          "product": "GCOV",
+          "collection_id": "C2854338529-ASF",
+          "time_start": "2026-10-21T05:19:36.000Z",
+          "time_end": "2026-10-21T05:20:05.999Z",
+          "polygon_latlon": [
+            [
+              61.52696,
+              -144.86483
+            ],
+            [
+              59.89956,
+              -146.57184
+            ],
+            [
+              58.8255,
+              -142.56523
+            ],
+            [
+              60.40258,
+              -140.72387
+            ],
+            [
+              61.52696,
+              -144.86483
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE_A_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE_A_HVHV.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE_B_HHHH.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GCOV_PROVISIONAL_V1/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GCOV_033_130_D_058_4005_DHDH_A_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE_B_HVHV.png"
+          ]
+        }
+      ],
+      "nasa_nisar_gunw": [
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T13:24:41.000Z",
+          "time_end": "2026-10-21T13:25:18.999Z",
+          "polygon_latlon": [
+            [
+              61.32726,
+              -135.16841
+            ],
+            [
+              63.32189,
+              -137.43547
+            ],
+            [
+              62.13383,
+              -141.75237
+            ],
+            [
+              60.2151,
+              -139.28054
+            ],
+            [
+              61.32726,
+              -135.16841
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_033_033_4000_SH_20261009T132441_20261009T132517_20261021T132441_20261021T132518_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T13:24:06.000Z",
+          "time_end": "2026-10-21T13:24:42.999Z",
+          "polygon_latlon": [
+            [
+              59.41125,
+              -133.26741
+            ],
+            [
+              61.43688,
+              -135.2798
+            ],
+            [
+              60.31942,
+              -139.40826
+            ],
+            [
+              58.36378,
+              -137.19065
+            ],
+            [
+              59.41125,
+              -133.26741
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_135_A_032_033_4000_SH_20261009T132406_20261009T132442_20261021T132406_20261021T132442_P05023_N_F_J_001_NATIVE.png"
+          ]
+        },
+        {
+          "granule_id": "NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001",
+          "product": "GUNW",
+          "collection_id": "C2854335566-ASF",
+          "time_start": "2026-10-09T05:19:36.000Z",
+          "time_end": "2026-10-21T05:20:05.999Z",
+          "polygon_latlon": [
+            [
+              61.5148,
+              -144.88684
+            ],
+            [
+              59.88574,
+              -146.58642
+            ],
+            [
+              58.81205,
+              -142.58076
+            ],
+            [
+              60.38927,
+              -140.74061
+            ],
+            [
+              61.5148,
+              -144.88684
+            ]
+          ],
+          "browse_url": "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON.png",
+          "browse_layers": [
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001_LATLON_thumbnail.png",
+            "https://nisar.asf.earthdatacloud.nasa.gov/BROWSE/NISAR_L2_GUNW_PROVISIONAL_V1/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001/NISAR_L2_PR_GUNW_032_130_D_058_033_4000_SH_20261009T051936_20261009T052005_20261021T051936_20261021T052005_P05023_N_F_J_001_NATIVE.png"
+          ]
+        }
+      ],
+      "nasa_asf_scenes": [
+        {
+          "granule_name": "S1D_IW_SLC__1SDV_20261110T154754_20261110T154826_005407_00A511_F4E8",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-10T15:47:54Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1D_IW_SLC__1SDV_20261110T154754_20261110T154826_005407_00A511_F4E8",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-10T15:47:54Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": null,
+          "url": null
+        },
+        {
+          "granule_name": "S1D_IW_GRDH_1SDV_20261110T154755_20261110T154826_005407_00A511_C388",
+          "platform": "Sentinel-1D",
+          "start_time": "2026-11-10T15:47:55Z",
+          "polarization": "VV+VH",
+          "beam_mode": "IW",
+          "flight_direction": "DESCENDING",
+          "browse_url": "https://datapool.asf.alaska.edu/BROWSE/SD/S1D_IW_GRDH_1SDV_20261110T154755_20261110T154826_005407_00A511_C388.jpg",
+          "url": null
+        }
+      ],
+      "planetary_computer_s1_rtc": [
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261110T154755_20261110T154826_005407_00A511_rtc",
+          "datetime": "2026-11-10T15:48:10.900019Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -144.10008294931544,
+            59.22055175022872,
+            -139.01898870895127,
+            61.31827274571559
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261110T154755_20261110T154826_005407_00A511_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261110T154755_20261110T154826_005407_00A511_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1D_IW_GRDH_1SDV_20261110T154730_20261110T154755_005407_00A511_rtc",
+          "datetime": "2026-11-10T15:47:43.237752Z",
+          "orbit_state": "descending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -143.54066861809395,
+            60.904578523072864,
+            -138.2750386698361,
+            62.80922852799486
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261110T154730_20261110T154755_005407_00A511_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1D_IW_GRDH_1SDV_20261110T154730_20261110T154755_005407_00A511_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        },
+        {
+          "id": "S1C_IW_GRDH_1SDV_20261105T030247_20261105T030312_010196_0145AF_rtc",
+          "datetime": "2026-11-05T03:02:59.951738Z",
+          "orbit_state": "ascending",
+          "polarizations": [
+            "VV",
+            "VH"
+          ],
+          "bbox": [
+            -143.9633197218535,
+            60.24915315335267,
+            -138.76634022052792,
+            62.15789501181372
+          ],
+          "preview_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/preview.png?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261105T030247_20261105T030312_010196_0145AF_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png",
+          "tilejson_url": "https://planetarycomputer.microsoft.com/api/data/v1/item/tilejson.json?collection=sentinel-1-rtc&item=S1C_IW_GRDH_1SDV_20261105T030247_20261105T030312_010196_0145AF_rtc&assets=vv&assets=vh&tile_format=png&expression=0.03%20%2B%20log%20(10e-4%20-%20log%20(0.05%20%2F%20(0.02%20%2B%202%20*%20vv)));0.05%20%2B%20exp%20(0.25%20*%20(log%20(0.01%20%2B%202%20*%20vv)%20%2B%20log%20(0.02%20%2B%205%20*%20vh)));1%20-%20log%20(0.05%20%2F%20(0.045%20-%200.9%20*%20vv))&asset_as_band=True&rescale=0,.8000&rescale=0,1.000&rescale=0,1.000&format=png"
+        }
+      ],
+      "meteomatics_weather": [
+        {
+          "date": "2026-10-07T00:00:00Z",
+          "t_2m:C": 3.7,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 4.3,
+          "relative_humidity_2m:p": 84.8
+        },
+        {
+          "date": "2026-10-09T00:00:00Z",
+          "t_2m:C": 1.7,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 3.0,
+          "relative_humidity_2m:p": 70.8
+        },
+        {
+          "date": "2026-10-11T00:00:00Z",
+          "t_2m:C": 3.2,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 0.8,
+          "relative_humidity_2m:p": 48.9
+        },
+        {
+          "date": "2026-10-13T00:00:00Z",
+          "t_2m:C": 1.7,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 2.5,
+          "relative_humidity_2m:p": 86.2
+        },
+        {
+          "date": "2026-10-15T00:00:00Z",
+          "t_2m:C": 3.5,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 3.7,
+          "relative_humidity_2m:p": 76.8
+        },
+        {
+          "date": "2026-10-17T00:00:00Z",
+          "t_2m:C": 2.4,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 4.1,
+          "relative_humidity_2m:p": 80.9
+        },
+        {
+          "date": "2026-10-19T00:00:00Z",
+          "t_2m:C": 1.8,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 1.4,
+          "relative_humidity_2m:p": 82.5
+        },
+        {
+          "date": "2026-10-21T00:00:00Z",
+          "t_2m:C": 2.3,
+          "precip_24h:mm": 0.0,
+          "wind_speed_10m:ms": 4.3,
+          "relative_humidity_2m:p": 96.0
+        }
+      ]
+    }
+  ]
+}
