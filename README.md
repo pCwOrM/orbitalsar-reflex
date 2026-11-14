@@ -22,6 +22,7 @@ Team Onboarding & Branch Guide: **[CONTRIBUTING.md](CONTRIBUTING.md)**
   - **Murat Emre ÖZKAYA**
   - **Prenses Metin** (`@PrensesMTN`)
 - **Official Community & Rules:** [nasa/spaceapps](https://github.com/nasa/spaceapps) · [Space Apps Legal](https://www.spaceappschallenge.org/legal/)
+- **Team Contact:** [info@orbitalsar.space](mailto:info@orbitalsar.space)
 
 ---
 
