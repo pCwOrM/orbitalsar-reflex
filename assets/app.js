@@ -204,7 +204,8 @@ function buildAvailableLayers() {
   if (gcov) {
     for (const url of gcov.browse_layers || []) {
       if (url.endsWith("_thumbnail.png")) continue;
-      const suffix = url.split("_").slice(-2).join("_").replace(".png", "");
+      const fname = url.split("/").pop() || "";
+      const suffix = fname.replace(gcov.granule_id + "_", "").replace(/\.png$/i, "");
       layers.push({
         label: `NISAR GCOV (${suffix}) · ${gcov.time_start.slice(0, 10)}`,
         url,
@@ -218,6 +219,14 @@ function buildAvailableLayers() {
       label: `NISAR GUNW Interferogram · ${gunw.time_start.slice(0, 10)} → ${gunw.time_end.slice(0, 10)}`,
       url: gunw.browse_url,
       caption: `NASA NISAR L2 GUNW: ${gunw.granule_id}`,
+    });
+  }
+  const asf = activeSite.nasa_asf_scenes?.[0];
+  if (asf && asf.browse_url) {
+    layers.push({
+      label: `NASA ASF (${asf.platform}) · ${(asf.start_time || "").slice(0, 10)}`,
+      url: asf.browse_url,
+      caption: `NASA ASF ${asf.platform}: ${asf.granule_name}`,
     });
   }
   const s1 = activeSite.planetary_computer_s1_rtc[0];
@@ -284,13 +293,36 @@ function syncOverlayImgWidth() {
 }
 
 function wireWipeControls() {
+  const container = document.getElementById("wipeContainer");
   const range = document.getElementById("wipeRange");
   const overlay = document.getElementById("wipeOverlay");
   const handle = document.getElementById("wipeHandle");
   const setPos = (pct) => {
-    overlay.style.width = `${pct}%`;
-    handle.style.left = `${pct}%`;
+    const clamped = Math.max(5, Math.min(95, Number(pct)));
+    range.value = String(clamped);
+    overlay.style.width = `${clamped}%`;
+    handle.style.left = `${clamped}%`;
   };
+
+  let dragging = false;
+  const updateFromClientX = (clientX) => {
+    const rect = container.getBoundingClientRect();
+    if (!rect.width) return;
+    const pct = ((clientX - rect.left) / rect.width) * 100;
+    setPos(pct);
+  };
+
+  container.addEventListener("pointerdown", (e) => {
+    dragging = true;
+    container.setPointerCapture?.(e.pointerId);
+    updateFromClientX(e.clientX);
+  });
+  container.addEventListener("pointermove", (e) => {
+    if (dragging) updateFromClientX(e.clientX);
+  });
+  container.addEventListener("pointerup", () => { dragging = false; });
+  container.addEventListener("pointercancel", () => { dragging = false; });
+
   range.addEventListener("input", () => setPos(range.value));
   window.addEventListener("resize", syncOverlayImgWidth);
 }
