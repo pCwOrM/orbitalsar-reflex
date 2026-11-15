@@ -319,7 +319,7 @@ th { color: var(--muted); font-weight: 600; }
 }
 
 @media (max-width: 600px) {
-  .topbar { padding: 12px 14px; }
+  .topbar { position: static; padding: 12px 14px; }
   .brand { gap: 12px; }
   .patch { width: 52px; height: 52px; }
   .topbar h1 { font-size: 1.25rem; }
@@ -327,7 +327,7 @@ th { color: var(--muted); font-weight: 600; }
   .card { padding: 14px; }
   .slider-grid, .hero-stats { grid-template-columns: minmax(0, 1fr); }
   .card-head { flex-wrap: wrap; }
-  .btn, .btn-sm { min-height: 40px; padding: 8px 12px; font-size: 0.82rem; }
+  .btn, .btn-sm, .site-tab { min-height: 40px; padding: 8px 12px; font-size: 0.82rem; display: inline-flex; align-items: center; }
   .byte-chip { font-size: 0.78rem; padding: 8px 10px; }
   input[type="range"] { min-height: 36px; }
 }
