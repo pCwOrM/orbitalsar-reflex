@@ -295,7 +295,7 @@ code { background: #020617; padding: 2px 6px; border-radius: 4px; color: var(--a
 }
 .byte-chip b { display: block; color: var(--text); font-size: 0.8rem; }
 
-.table-wrap { overflow-x: auto; max-width: 100%; min-width: 0; }
+.table-wrap { overflow-x: auto; max-width: 100%; min-width: 0; -webkit-overflow-scrolling: touch; }
 table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
 th { color: var(--muted); font-weight: 600; }
@@ -320,8 +320,14 @@ th { color: var(--muted); font-weight: 600; }
 
 @media (max-width: 600px) {
   .topbar { padding: 12px 14px; }
+  .brand { gap: 12px; }
+  .patch { width: 52px; height: 52px; }
+  .topbar h1 { font-size: 1.25rem; }
   .shell { padding: 14px 12px 32px; gap: 14px; }
   .card { padding: 14px; }
   .slider-grid, .hero-stats { grid-template-columns: minmax(0, 1fr); }
   .card-head { flex-wrap: wrap; }
+  .btn, .btn-sm { min-height: 40px; padding: 8px 12px; font-size: 0.82rem; }
+  .byte-chip { font-size: 0.78rem; padding: 8px 10px; }
+  input[type="range"] { min-height: 36px; }
 }
